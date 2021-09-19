@@ -1,0 +1,17 @@
+/.metadata/
+./metadata/
+./bin/
+Servers/
+tmp/
+*.classpath
+*.project
+*.tmp
+*.index
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+/.metadata/

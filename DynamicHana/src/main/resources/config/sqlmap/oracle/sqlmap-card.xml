@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="card.CardDAO">
+
+	<!-- resultMap -->
+	<resultMap type="benefitVO" id="benefitMap">
+		<result column="CATEGORY_KOR" property="categoryKor" />
+		<result column="CARD_CODE" property="cardCode" />
+		<result column="CARD_NAME" property="cardName" />
+	</resultMap>
+
+	<resultMap type="cardBenefitVO" id="cardBenefitMap">
+		<result column="CARD_CODE" property="cardCode" />
+		<result column="CARD_NAME" property="cardName" />
+		<result column="CARD_TYPE" property="cardType" />
+		<result column="ANNUAL_FEE" property="annualFee" />
+		<result column="ALWAYS_DISCOUNT" property="alwaysDiscount" />
+		<result column="AIR_MILEAGE" property="airMileage" />
+		<result column="CAFE_BAKERY" property="cafeBakery" />
+		<result column="ANNUAL_FEE_SUPPORT" property="annualFeeSupport" />
+		<result column="PUBLIC_TRANSPORTATION"
+			property="publicTransportation" />
+		<result column="NATIONAL_VOUCHER" property="nationalVoucher" />
+		<result column="POINT_CASHBACK" property="pointCashback" />
+		<result column="EAT_OUT" property="eatOut" />
+		<result column="EASY_PAY" property="easyPay" />
+		<result column="PRIORITY_PASS" property="priorityPass" />
+	</resultMap>
+
+	<resultMap type="userCardVO" id="userCardMap">
+		<result column="CARD_NO" property="cardNo" />
+		<result column="CARD_CODE" property="cardCode" />
+		<result column="CARD_NAME" property="cardName" />
+		<result column="CARD_TYPE" property="cardType" />
+		<result column="CARD_PASSWORD" property="cardPassword" />
+		<result column="ANNUAL_FEE" property="annualFee" />
+	</resultMap>
+
+	<resultMap type="historyVO" id="historyMap">
+		<result column="HISTORY_DATE" property="historyDate" />
+		<result column="CARD_NAME" property="cardName" />
+		<result column="CARD_NO" property="cardNo" />
+		<result column="CARD_CODE" property="cardCode" />
+		<result column="SUB_TOTAL" property="subTotal" />
+	</resultMap>
+
+
+
+	<!-- commonQuery -->
+	<sql id="selectBenefit">
+		SELECT C.CARD_CODE, C.CARD_NAME, C.CARD_TYPE, TRIM(TO_CHAR(
+		C.ANNUAL_FEE ,
+		'999,999,999,999,999')) AS ANNUAL_FEE,
+		B.ALWAYS_DISCOUNT, B.CVS,
+		B.AIR_MILEAGE, B.BEAUTY, B.COMMUNICATION,
+		B.CAFE_BAKERY, B.MOVIE,
+		B.HYPERMART, B.EDUCATION, B.CULTURE,
+		B.ANNUAL_FEE_SUPPORT,
+		B.PUBLIC_TRANSPORTATION, B.RENTAL, B.OIL,
+		B.SHOPPING, B.LEISURE,
+		B.NATIONAL_VOUCHER, B.POINT_CASHBACK,
+		B.AUTOMOBILES, B.MEDICAL,
+		B.FINANCE, B.EAT_OUT, B.EASY_PAY,
+		B.MAINTENANCE, B.PREMIUM, B.VOUCHER,
+		B.PRIORITY_PASS FROM CARD
+		C,
+		CARD_BENEFITS B WHERE
+		C.CARD_NAME=B.CARD_NAME
+	</sql>
+
+
+	<!-- select -->
+	<select id="selectByNo" resultType="cardBenefitVO"
+		resultMap="cardBenefitMap">
+		<include refid="selectBenefit" />
+		AND C.CARD_CODE=#{no}
+	</select>
+
+
+	<select id="selectAllCard" resultType="list"
+		resultMap="userCardMap">
+		SELECT * FROM (SELECT ROWNUM RN, A.* FROM
+		(SELECT CARD_CODE,
+		CARD_NAME, CARD_TYPE, TRIM(TO_CHAR(
+		ANNUAL_FEE ,
+		'999,999,999,999,999')) AS ANNUAL_FEE FROM CARD ORDER BY CARD_CODE) A
+		)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+
+	<select id="getLength" resultType="int">
+		SELECT COUNT(*) FROM CARD
+	</select>
+
+
+	<select id="selectBenefitList" resultType="list"
+		resultMap="benefitMap">
+		SELECT DISTINCT CATEGORY_KOR, CATEGORY FROM
+		CARD_BENEFITS_CATEGORY
+	</select>
+
+
+	<select id="selectNotice" resultType="benefitVO"
+		resultMap="benefitMap">
+		SELECT C.CARD_CODE, C.CARD_NAME, N.CATEGORY,
+		B.CATEGORY_KOR,
+		N.NOTICE FROM CREDITCARD_NOTICE N, CARD C,
+		CARD_BENEFITS_CATEGORY B
+		WHERE N.CARD_NAME = C.CARD_NAME AND
+		N.CATEGORY = B.CATEGORY AND
+		C.CARD_CODE=#{cardCode}
+	</select>
+
+	<select id="selectUserCardList" parameterType="int"
+		resultType="List" resultMap="userCardMap">
+		SELECT C.CARD_NAME, M.CARD_NO,
+		M.CARD_PASSWORD, M.CARD_CODE FROM CARD C, MEMBER_CARD M WHERE
+		C.CARD_CODE = M.CARD_CODE AND M.MEMBER_NO=#{memberNo}
+
+	</select>
+
+	<select id="checkCardPassword" parameterType="userCardVO"
+		resultType="int">
+		SELECT count(*) FROM MEMBER_CARD WHERE
+		CARD_NO=#{ cardNo }
+		AND CARD_PASSWORD=#{cardPassword}
+
+	</select>
+
+	<select id="selectTransactionHistory" resultType="List"
+		parameterType="historyVO" resultMap="historyMap">
+		SELECT HISTORY_DATE, CATEGORY,
+		AMOUNT,
+		STORE, CARD_NAME, CARD_NO,
+		CARD_CODE FROM (SELECT ROWNUM RN,
+		A.* FROM
+		(SELECT T.HISTORY_DATE,
+		T.CATEGORY,
+		T.AMOUNT, T.STORE,
+		C.CARD_NAME,
+		M.CARD_NO, M.CARD_CODE FROM
+		CARD C,
+		MEMBER_CARD M,
+		TRANSACTION_HISTORY T
+		WHERE T.HISTORY_DATE BETWEEN
+		SYSDATE-90 AND SYSDATE
+		AND C.CARD_CODE =
+		M.CARD_CODE AND T.CARD_NO =
+		M.CARD_NO AND
+		M.CARD_NO=#{cardNo}
+		<if test="txt != null and !txt.equals('')">
+			AND STORE LIKE '%'||#{txt}||'%'
+		</if>
+		<if test="category != null and !category.equals('')">
+			AND CATEGORY=trim(#{category})
+		</if>
+
+
+
+
+		<!-- <if test="category == null"> WHERE </if> -->
+
+		ORDER BY
+		HISTORY_DATE DESC) A
+		)
+		WHERE RN
+		BETWEEN
+		#{start} AND #{end}
+
+	</select>
+
+	<select id="getHistoryLength" parameterType="String"
+		resultType="int">
+		SELECT COUNT(*) FROM TRANSACTION_HISTORY WHERE
+		CARD_NO=#{cardNo} AND
+		HISTORY_DATE BETWEEN SYSDATE-90 AND SYSDATE
+		<if test="txt != null and !txt.equals('')">
+			AND STORE LIKE '%'||#{txt}||'%'
+		</if>
+		<if test="category != null and !category.equals('')">
+			AND CATEGORY=TRIM(#{category})
+		</if>
+	</select>
+
+	<select id="getTransactionCategory" parameterType="String"
+		resultType="historyVO" resultMap="historyMap">
+		SELECT CATEGORY, SUM(AMOUNT) AS
+		SUB_TOTAL, COUNT(CATEGORY) AS
+		CNT FROM TRANSACTION_HISTORY WHERE
+		HISTORY_DATE BETWEEN SYSDATE-90 AND
+		SYSDATE AND CARD_NO=#{cardNo} GROUP
+		BY CATEGORY
+		ORDER BY CNT DESC
+
+	</select>
+
+	<select id="selectWeeklyConsumption" parameterType="String"
+		resultType="historyVO" resultMap="historyMap">
+		SELECT WEEK, SUM(AMOUNT) AS SUB_TOTAL
+		FROM
+		(SELECT
+		replace(replace(REPLACE(TO_CHAR(HISTORY_DATE,'MM'),'0','')||'월
+		'||TO_CHAR(HISTORY_DATE,'W')||'주차', chr(10), '') , chr(13), '') AS
+		WEEK, AMOUNT FROM TRANSACTION_HISTORY WHERE
+		CARD_NO=#{cardNo} AND
+		HISTORY_DATE BETWEEN SYSDATE-42 AND
+		SYSDATE)
+		GROUP BY WEEK ORDER BY WEEK
+
+	</select>
+	<select id="selectConsumptionRanking" parameterType="String"
+		resultType="historyVO" resultMap="historyMap">
+		<![CDATA[
+		SELECT * FROM(
+		SELECT TO_CHAR(HISTORY_DATE, 'YYYY"년" MM"월" DD"일" (DY)' ) AS HISTORY_DATE,
+		STORE, AMOUNT
+		FROM TRANSACTION_HISTORY WHERE CARD_NO=#{cardNo} AND
+		HISTORY_DATE BETWEEN SYSDATE-90 AND SYSDATE ORDER BY AMOUNT) WHERE
+		ROWNUM<=5
+		]]>
+
+	</select>
+
+	<select id="selectUserConsumption" parameterType="int"
+		resultType="cardBenefitVO" resultMap="cardBenefitMap">
+		SELECT
+		nvl(always_Discount,0) as
+		always_Discount,
+		nvl(cvs,0) as cvs,
+		nvl(air_Mileage,0) as air_Mileage,
+		nvl(beauty,0) as beauty,
+		nvl(communication,0) as communication,
+		nvl(cafe_Bakery,0) as cafe_Bakery,
+		nvl(movie,0) as movie,
+		nvl(hypermart,0) as hypermart,
+		nvl(education,0) as education,
+		nvl(culture,0) as culture,
+		nvl(annual_Fee_Support,0) as
+		annual_Fee_Support,
+		nvl(public_Transportation,0) as
+		public_Transportation,
+		nvl(rental,0) as rental,
+		nvl(oil,0) as oil,
+		nvl(shopping,0) as shopping,
+		nvl(leisure,0) as leisure,
+		nvl(national_Voucher,0) as national_Voucher,
+		nvl(point_Cashback,0) as
+		point_Cashback,
+		nvl(automobiles,0) as automobiles,
+		nvl(medical,0) as
+		medical,
+		nvl(finance,0) as finance,
+		nvl(eat_Out,0) as eat_Out,
+		nvl(easy_Pay,0) as easy_Pay,
+		nvl(maintenance,0) as maintenance,
+		nvl(premium,0) as premium,
+		nvl(voucher,0) as voucher,
+		nvl(priority_Pass,0) as priority_Pass
+		FROM
+		(
+		SELECT T.CATEGORY,
+		SUM(T.AMOUNT) AS AMOUNT FROM
+		MEMBER_CARD C,
+		TRANSACTION_HISTORY T WHERE
+		C.CARD_NO = T.CARD_NO AND
+		T.HISTORY_DATE BETWEEN '18/12/01' AND
+		'18/12/31' AND MEMBER_NO=#{memberNo}
+		GROUP
+		BY CATEGORY
+		)
+		PIVOT
+		(
+		SUM(AMOUNT)
+		FOR CATEGORY IN ('교육' AS EDUCATION,'오토'
+		AS AUTOMOBILES,'쇼핑'
+		AS
+		SHOPPING,'레저' AS LEISURE,'PRIORITY_PASS' AS
+		PRIORITY_PASS ,'금융' AS
+		FINANCE,'항공마일리지' AS AIR_MILEAGE,'뷰티' AS
+		BEAUTY,'통신' AS COMMUNICATION
+		,'외식' AS EAT_OUT,'국민행복카드' AS
+		NATIONAL_VOUCHER,'문화' AS CULTURE
+		,'카페/베이커리' AS CAFE_BAKERY,'의료' AS
+		MEDICAL,'프리미엄' AS PREMIUM,'연회비지원' AS
+		ANNUAL_FEE_SUPPORT,'바우처' AS
+		VOUCHER,'언제나 할인' AS ALWAYS_DISCOUNT,'대중교통'
+		AS
+		PUBLIC_TRANSPORTATION,'영화' AS MOVIE,'포인트/캐시백' AS
+		POINT_CASHBACK,'간편결제'
+		AS EASY_PAY,'대형마트' AS HYPERMART,'렌탈' AS
+		RENTAL,'주유' AS OIL,'관리비' AS
+		MAINTENANCE,'편의점' AS CVS)
+		)
+	</select>
+
+
+	<select id="selectStatByNo" parameterType="int"
+		resultType="demographyVO">
+		<![CDATA[
+		SELECT SUM(DECODE(GENDER, 'M', 1, 0)) AS MALE,
+		SUM(DECODE(GENDER, 'F',
+		1, 0)) AS FEMALE,
+		SUM(DECODE(AGE_GROUP, '미성년자', 1, 0)) AS MINOR,
+		SUM(DECODE(AGE_GROUP, '20대', 1, 0)) AS
+		age20,
+		SUM(DECODE(AGE_GROUP,
+		'30대', 1, 0)) AS age30, SUM(DECODE(AGE_GROUP, '40대', 1, 0)) AS age40,
+		SUM(DECODE(AGE_GROUP, '50대', 1, 0)) AS age50, SUM(DECODE(AGE_GROUP, '60대 이상', 1, 0)) AS SENIOR
+		FROM(
+		SELECT M.GENDER, CASE
+		WHEN M.AGE < 20 THEN '미성년자'
+		WHEN M.AGE < 30 THEN '20대'
+		WHEN M.AGE < 40 THEN '30대'
+		WHEN M.AGE < 50 THEN '40대'
+		WHEN M.AGE < 60 THEN '50대'
+		WHEN M.AGE >= 60 THEN '60대 이상' END AS AGE_GROUP ,
+		C.CARD_CODE, D.CARD_NAME
+		FROM T_MEMBER M, MEMBER_CARD C, CARD D WHERE
+		C.CARD_CODE = #{no} AND
+		M.MEMBER_NO = C.MEMBER_NO AND C.CARD_CODE =
+		D.CARD_CODE)
+		]]>
+	</select>
+
+	<select id="selectByFilter" parameterType="hashmap"
+		resultType="cardBenefitVO" resultMap="cardBenefitMap">
+
+		<include refid="selectBenefit" />
+
+		<if test="cardName != null and !cardName.equals('')">
+			AND C.CARD_NAME like '%'||#{cardName}||'%'
+		</if>
+		<if test="cardType != null and !cardType.equals('')">
+			AND C.CARD_TYPE = #{cardType}
+		</if>
+
+		<if
+			test="annualFeeRange_min != null and !annualFeeRange_min.equals('')">
+			AND C.ANNUAL_FEE BETWEEN #{annualFeeRange_min} AND
+			#{annualFeeRange_max}
+		</if>
+
+		<if
+			test="annualFeeRange_min != null and !annualFeeRange_min.equals('')">
+			AND C.ANNUAL_FEE BETWEEN #{annualFeeRange_min} AND
+			#{annualFeeRange_max}
+		</if>
+		<if test="MOVIE_min!=null">
+			AND B.MOVIE BETWEEN #{MOVIE_min} AND #{MOVIE_max}
+		</if>
+		<if test="SHOPPING_min!=null">
+			AND B.SHOPPING BETWEEN #{SHOPPING_min} AND #{SHOPPING_max}
+		</if>
+		<if test="COMMUNICATION_min!=null">
+			AND B.COMMUNICATION BETWEEN #{COMMUNICATION_min} AND
+			#{COMMUNICATION_max}
+		</if>
+
+		<if test="EDUCATION_min!=ull">
+			AND B.EDUCATION BETWEEN #{EDUCATION_min} AND
+			#{EDUCATION_max}
+		</if>
+		<if test="HYPERMART_min!=null">
+			AND B.HYPERMART BETWEEN #{HYPERMART_min} AND
+			#{HYPERMART_max}
+		</if>
+		<if test="MAINTENANCE_min!=null">
+			AND B.MAINTENANCE BETWEEN #{MAINTENANCE_min} AND
+			#{MAINTENANCE_max}
+		</if>
+
+		<if test="AUTOMOBILES_min!=null">
+			AND B.AUTOMOBILES BETWEEN #{AUTOMOBILES_min} AND
+			#{AUTOMOBILES_max}
+		</if>
+		<if test="MEDICAL_min!=null">
+			AND B.MEDICAL BETWEEN #{MEDICAL_min} AND #{MEDICAL_max}
+		</if>
+		<if test="CULTURE_min!=null">
+			AND B.CULTURE BETWEEN #{CULTURE_min} AND #{CULTURE_max}
+		</if>
+
+		<if test="FINANCE_min!=null">
+			AND B.FINANCE BETWEEN #{FINANCE_min} AND #{FINANCE_max}
+		</if>
+		<if test="AIR_MILEAGE_min!=null">
+			AND B.AIR_MILEAGE BETWEEN #{AIR_MILEAGE_min} AND
+			#{AIR_MILEAGE_max}
+		</if>
+		<if test="CAFE_BAKERY_min!=null">
+			AND B.CAFE_BAKERY BETWEEN #{CAFE_BAKERY_min} AND
+			#{CAFE_BAKERY_max}
+		</if>
+		<if test="ALWAYS_DISCOUNT_min!=null">
+			AND B.ALWAYS_DISCOUNT BETWEEN #{ALWAYS_DISCOUNT_min} AND
+			#{ALWAYS_DISCOUNT_max}
+		</if>
+		<if test="VOUCHER_min!=null">
+			AND B.VOUCHER BETWEEN #{VOUCHER_min} AND #{VOUCHER_max}
+		</if>
+		<if test="PRIORITY_PASS_min!=null">
+			AND B.PRIORITY_PASS BETWEEN #{PRIORITY_PASS_min} AND
+			#{PRIORITY_PASS_max}
+		</if>
+		<if test="OIL_min!=null">
+			AND B.OIL BETWEEN #{OIL_min} AND #{OIL_max}
+		</if>
+		<if test="PUBLIC_TRANSPORTATION_min!=null">
+			AND B.PUBLIC_TRANSPORTATION BETWEEN
+			#{PUBLIC_TRANSPORTATION_min} AND
+			#{PUBLIC_TRANSPORTATION_max}
+		</if>
+		<if test="ANNUAL_FEE_SUPPORT_min!=null">
+			AND B.ANNUAL_FEE_SUPPORT BETWEEN #{ANNUAL_FEE_SUPPORT_min}
+			AND
+			#{ANNUAL_FEE_SUPPORT_max}
+		</if>
+		<if test="EAT_OUT_min!=null">
+			AND B.EAT_OUT BETWEEN #{EAT_OUT_min} AND #{EAT_OUT_max}
+		</if>
+		<if test="LEISURE_min!=null">
+			AND B.LEISURE BETWEEN #{LEISURE_min} AND #{LEISURE_max}
+		</if>
+		<if test="POINT_CASHBACK_min!=null">
+			AND B.POINT_CASHBACK BETWEEN #{POINT_CASHBACK_min} AND
+			#{POINT_CASHBACK_max}
+		</if>
+		<if test="EASY_PAY_min!=null">
+			AND B.EASY_PAY BETWEEN #{EASY_PAY_min} AND #{EASY_PAY_max}
+		</if>
+
+		<if test="BEAUTY_min!=null">
+			AND B.BEAUTY BETWEEN #{BEAUTY_min} AND #{BEAUTY_max}
+		</if>
+		<if test="NATIONAL_VOUCHER_min!=null">
+			AND B.NATIONAL_VOUCHER BETWEEN #{NATIONAL_VOUCHER_min} AND
+			#{NATIONAL_VOUCHER_max}
+		</if>
+		<if test="CVS_min!=null">
+			AND B.CVS BETWEEN #{CVS_min} AND #{CVS_max}
+		</if>
+		<if test="RENTAL_min!=null">
+			AND B.RENTAL BETWEEN #{RENTAL_min} AND #{RENTAL_max}
+		</if>
+
+
+	</select>
+
+
+
+	<!-- <insert id="register" parameterType="memberVO"> INSERT INTO T_MEMBER(ID, 
+		PW, NAME, MOBILE_NO, RRN, BIRTHDAY, AGE, GENDER, ISNATIVE, ADDRESS, ADDRESS_DETAIL) 
+		VALUES (#{id}, #{pw}, #{name}, #{mobileNo}, #{rrn}, TO_DATE(#{birthday}), 
+		#{age}, #{gender}, #{isNative}, #{address}, #{addressDetail}) </insert> -->
+
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member.MemberDAO">
+	<resultMap type="memberVO" id="memberMap">
+		<result column="member_no" property="memberNo"/>
+		<result column="mobile_no" property="mobileNo"/>
+		<result column="manager_no" property="managerNo"/>
+		<result column="user_type" property="userType"/>
+		<result column="address_detail" property="addressDetail"/>
+	</resultMap>
+
+	<select id="login" parameterType="memberVO" resultType="memberVO" resultMap = "memberMap">
+		SELECT MEMBER_NO, ID, NAME, PW, AGE, USER_TYPE
+		 FROM T_MEMBER
+		 WHERE ID = #{ id } AND PW = #{ pw } 
+		
+	</select>
+	
+	<select id="checkId" parameterType="String" resultType="String">
+		select id from t_member where id = #{id}		
+	</select>
+	
+	<insert id="register" parameterType="memberVO">
+	INSERT INTO T_MEMBER(ID, PW, NAME, MOBILE_NO, RRN, BIRTHDAY, AGE, GENDER, ISNATIVE, ADDRESS, ADDRESS_DETAIL)
+	 VALUES (#{id}, #{pw}, #{name}, #{mobileNo}, #{rrn}, TO_DATE(#{birthday}), #{age}, #{gender}, #{isNative}, #{address}, #{addressDetail})
+		
+	</insert>
+
+</mapper>

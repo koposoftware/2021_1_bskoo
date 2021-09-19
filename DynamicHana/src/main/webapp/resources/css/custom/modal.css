@@ -1,0 +1,65 @@
+/* index */
+.index_modal {
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.index_modal.show {
+	display: block;
+}
+
+.index_body {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 60%;
+	height: 50%;
+	padding: 40px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 10;
+}
+
+.index_body .content {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.index_body .content p {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.index_body .select {
+	padding-top: 10px;
+	text-align: center;
+}
+
+.index_modal_cancel {
+	cursor: pointer;
+}
+
+.index_body>table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	height: 40%;
+	padding-top: 10px;
+	float: center;
+	text-align: left;
+}
+
+.index_body .select p {
+	margin-left: 30%;
+	margin-right: 30%;
+	background-color: #008485;
+	color: white;
+	border-radius: 10px;
+}

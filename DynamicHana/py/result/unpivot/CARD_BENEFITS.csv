@@ -1,0 +1,171 @@
+﻿,CARD_NAME,CATEGORY,BENEFIT
+0,CLUB SK (클럽SK),MOVIE,0.3
+1,Mile 1.6 대한항공,MOVIE,0.4
+2,Any PLUS (애니플러스),MOVIE,0.07
+3,#tag1카드 Navy (태그원카드 네이비),MOVIE,0.4
+4,하나멤버스 1Q카드 내맘대로 트렌디형,MOVIE,0.5
+5,하나멤버스 1Q카드 내맘대로 직장인형,MOVIE,0.5
+6,하나멤버스 1Q카드 내맘대로 생활형,MOVIE,0.5
+7,하나멤버스 1Q카드 내맘대로 웰빙형,MOVIE,0.5
+8,하나멤버스 1Q카드 내맘대로 여행형,MOVIE,0.5
+9,#tag1카드 Orange (태그원카드 오렌지),MOVIE,0.4
+10,1Q Global VIVA (원큐 글로벌 비바),MOVIE,0.5
+11,Mile 1.6 아시아나,MOVIE,0.4
+12,모두의 신세계 하나카드,SHOPPING,0.05
+13,MULTI ON,SHOPPING,0.02
+14,MULTI Living,SHOPPING,0.1
+15,MULTI Any,SHOPPING,0.02
+16,모두의 건강,SHOPPING,0.05
+17,Any PLUS (애니플러스),SHOPPING,0.007
+18,1Q Shopping+ (원큐 쇼핑플러스),SHOPPING,0.04
+19,통커 카드,SHOPPING,0.05
+20,#tag1카드 Navy (태그원카드 네이비),SHOPPING,0.1
+21,하나멤버스 1Q카드 내맘대로 트렌디형,SHOPPING,0.05
+22,하나멤버스 1Q카드 내맘대로 직장인형,SHOPPING,0.05
+23,하나멤버스 1Q카드 내맘대로 생활형,SHOPPING,0.05
+24,하나멤버스 1Q카드 내맘대로 웰빙형,SHOPPING,0.05
+25,하나멤버스 1Q카드 내맘대로 여행형,SHOPPING,0.05
+26,모두의 쇼핑,SHOPPING,0.1
+27,1Q Special+ (원큐 스페셜플러스),SHOPPING,0.1
+28,1Q Daily+ (원큐 데일리플러스),SHOPPING,0.05
+29,Smart Any (스마트애니),SHOPPING,0.014
+30,#tag1카드 Orange (태그원카드 오렌지),SHOPPING,0.1
+31,MULTI Living,COMMUNICATION,0.05
+32,MULTI Young,COMMUNICATION,0.1
+33,CLUB SK (클럽SK),COMMUNICATION,0.1
+34,Any PLUS (애니플러스),COMMUNICATION,0.007
+35,1Q Shopping+ (원큐 쇼핑플러스),COMMUNICATION,0.1
+36,통커 카드,COMMUNICATION,0.1
+37,#tag1카드 Navy (태그원카드 네이비),COMMUNICATION,0.1
+38,하나멤버스 1Q카드 내맘대로 트렌디형,COMMUNICATION,0.05
+39,하나멤버스 1Q카드 내맘대로 직장인형,COMMUNICATION,0.05
+40,하나멤버스 1Q카드 내맘대로 생활형,COMMUNICATION,0.05
+41,하나멤버스 1Q카드 내맘대로 웰빙형,COMMUNICATION,0.05
+42,하나멤버스 1Q카드 내맘대로 여행형,COMMUNICATION,0.05
+43,1Q Special+ (원큐 스페셜플러스),COMMUNICATION,0.1
+44,1Q Daily+ (원큐 데일리플러스),COMMUNICATION,0.05
+45,#tag1카드 Orange (태그원카드 오렌지),COMMUNICATION,0.1
+46,1Q Global VIVA (원큐 글로벌 비바),COMMUNICATION,0.1
+47,CLUB SK (클럽SK),EDUCATION,0.1
+48,Any PLUS (애니플러스),EDUCATION,0.007
+49,#tag1카드 Navy (태그원카드 네이비),EDUCATION,0.1
+50,하나멤버스 1Q카드 내맘대로 생활형,EDUCATION,0.05
+51,MULTI Living,HYPERMART,0.1
+52,CLUB SK (클럽SK),HYPERMART,0.1
+53,MULTI Any,HYPERMART,0.02
+54,모두의 건강,HYPERMART,0.05
+55,Any PLUS (애니플러스),HYPERMART,0.007
+56,1Q Shopping+ (원큐 쇼핑플러스),HYPERMART,0.04
+57,#tag1카드 Navy (태그원카드 네이비),HYPERMART,0.05
+58,하나멤버스 1Q카드 내맘대로 생활형,HYPERMART,0.07
+59,하나멤버스 1Q카드 내맘대로 웰빙형,HYPERMART,0.07
+60,모두의 쇼핑,HYPERMART,0.05
+61,1Q Special+ (원큐 스페셜플러스),HYPERMART,0.4
+62,MULTI Living,MAINTENANCE,0.05
+63,MULTI Young,MAINTENANCE,0.01
+64,#tag1카드 Navy (태그원카드 네이비),MAINTENANCE,0.1
+65,1Q Special+ (원큐 스페셜플러스),MAINTENANCE,0.1
+66,1Q Daily+ (원큐 데일리플러스),MAINTENANCE,0.05
+67,1Q Global VIVA (원큐 글로벌 비바),MAINTENANCE,0.1
+68,하나 국민행복카드,MEDICAL,0.05
+69,모두의 건강,MEDICAL,0.05
+70,Any PLUS (애니플러스),MEDICAL,0.007
+71,하나멤버스 1Q카드 내맘대로 웰빙형,MEDICAL,0.05
+72,MULTI ON,CULTURE,0.04
+73,MULTI Young,CULTURE,0.3
+74,Any PLUS (애니플러스),CULTURE,0.007
+75,하나멤버스 1Q카드 내맘대로 생활형,CULTURE,0.07
+76,Mile 1.6 대한항공,AIR_MILEAGE,0.144
+77,CLUB Signature SKYPASS,AIR_MILEAGE,0.02
+78,하나멤버스 1Q카드 내맘대로 여행형,AIR_MILEAGE,0.1
+79,CLUB Primus Skypass,AIR_MILEAGE,0.1
+80,CLUB Signature Asiana Club,AIR_MILEAGE,0.03
+81,Mile 1.6 아시아나,AIR_MILEAGE,0.02
+82,모두의 신세계 하나카드,CAFE_BAKERY,0.2
+83,하나 국민행복카드,CAFE_BAKERY,0.1
+84,CLUB SK (클럽SK),CAFE_BAKERY,0.05
+85,모두의 건강,CAFE_BAKERY,0.05
+86,MULTI Oil,CAFE_BAKERY,0.05
+87,Mile 1.6 대한항공,CAFE_BAKERY,0.4
+88,Any PLUS (애니플러스),CAFE_BAKERY,0.007
+89,1Q Shopping+ (원큐 쇼핑플러스),CAFE_BAKERY,0.04
+90,통커 카드,CAFE_BAKERY,0.5
+91,1Q Special+ (원큐 스페셜플러스),CAFE_BAKERY,0.4
+92,CLUB PREMIER 카드 [Travel],CAFE_BAKERY,0.2
+93,1Q Daily+ (원큐 데일리플러스),CAFE_BAKERY,0.4
+94,CLUB PREMIER 카드 [Hotel],CAFE_BAKERY,0.2
+95,#tag1카드 Orange (태그원카드 오렌지),CAFE_BAKERY,0.5
+96,my pass 마패 카드,CAFE_BAKERY,0.1
+97,Mile 1.6 아시아나,CAFE_BAKERY,0.4
+98,MULTI ON,ALWAYS_DISCOUNT,0.07
+99,MULTI Any,ALWAYS_DISCOUNT,0.07
+100,Any PLUS (애니플러스),ALWAYS_DISCOUNT,0.007
+101,1Q Shopping+ (원큐 쇼핑플러스),ALWAYS_DISCOUNT,0.1
+102,1Q Daily+ (원큐 데일리플러스),ALWAYS_DISCOUNT,0.01
+103,Smart Any (스마트애니),ALWAYS_DISCOUNT,0.008
+104,하나 BC 그린카드 [전국형],ALWAYS_DISCOUNT,0.005
+105,MULTI Living,OIL,0.1
+106,CLUB SK (클럽SK),OIL,0.1
+107,MULTI Oil,OIL,0.1
+108,Any PLUS (애니플러스),OIL,0.007
+109,1Q Shopping+ (원큐 쇼핑플러스),OIL,0.006
+110,#tag1카드 Navy (태그원카드 네이비),OIL,0.04
+111,하나멤버스 1Q카드 내맘대로 직장인형,OIL,0.07
+112,1Q Special+ (원큐 스페셜플러스),OIL,0.05
+113,1Q Daily+ (원큐 데일리플러스),OIL,0.03
+114,CLUB PREMIER 카드 [Hotel],OIL,0.07
+115,#tag1카드 Orange (태그원카드 오렌지),OIL,0.04
+116,모두의 신세계 하나카드,PUBLIC_TRANSPORTATION,0.2
+117,MULTI Young,PUBLIC_TRANSPORTATION,0.1
+118,CLUB SK (클럽SK),PUBLIC_TRANSPORTATION,0.07
+119,MULTI Any,PUBLIC_TRANSPORTATION,0.04
+120,Any PLUS (애니플러스),PUBLIC_TRANSPORTATION,0.007
+121,1Q Shopping+ (원큐 쇼핑플러스),PUBLIC_TRANSPORTATION,0.1
+122,하나멤버스 1Q카드 내맘대로 트렌디형,PUBLIC_TRANSPORTATION,0.05
+123,하나멤버스 1Q카드 내맘대로 직장인형,PUBLIC_TRANSPORTATION,0.05
+124,하나멤버스 1Q카드 내맘대로 생활형,PUBLIC_TRANSPORTATION,0.05
+125,하나멤버스 1Q카드 내맘대로 웰빙형,PUBLIC_TRANSPORTATION,0.05
+126,하나멤버스 1Q카드 내맘대로 여행형,PUBLIC_TRANSPORTATION,0.05
+127,1Q Special+ (원큐 스페셜플러스),PUBLIC_TRANSPORTATION,0.1
+128,CLUB PREMIER 카드 [Travel],PUBLIC_TRANSPORTATION,0.2
+129,CLUB Primus Skypass,PUBLIC_TRANSPORTATION,0.1
+130,1Q Daily+ (원큐 데일리플러스),PUBLIC_TRANSPORTATION,0.05
+131,CLUB PREMIER 카드 [Hotel],PUBLIC_TRANSPORTATION,0.2
+132,#tag1카드 Orange (태그원카드 오렌지),PUBLIC_TRANSPORTATION,0.07
+133,하나 BC 그린카드 [전국형],PUBLIC_TRANSPORTATION,0.01
+134,my pass 마패 카드,PUBLIC_TRANSPORTATION,0.02
+135,1Q Global VIVA (원큐 글로벌 비바),PUBLIC_TRANSPORTATION,0.1
+136,MULTI ON,EAT_OUT,0.03
+137,MULTI Young,EAT_OUT,0.1
+138,CLUB SK (클럽SK),EAT_OUT,0.1
+139,MULTI Any,EAT_OUT,0.03
+140,모두의 건강,EAT_OUT,0.05
+141,Any PLUS (애니플러스),EAT_OUT,0.007
+142,#tag1카드 Navy (태그원카드 네이비),EAT_OUT,0.01
+143,하나멤버스 1Q카드 내맘대로 트렌디형,EAT_OUT,0.3
+144,하나멤버스 1Q카드 내맘대로 직장인형,EAT_OUT,0.07
+145,1Q Special+ (원큐 스페셜플러스),EAT_OUT,0.05
+146,#tag1카드 Orange (태그원카드 오렌지),EAT_OUT,0.1
+147,모두의 신세계 하나카드,LEISURE,0.3
+148,모두의 건강,LEISURE,0.05
+149,Any PLUS (애니플러스),LEISURE,0.007
+150,My Trip SKYPASS 카드,LEISURE,0.05
+151,My Trip AsianaClub 카드,LEISURE,0.05
+152,#tag1카드 Navy (태그원카드 네이비),LEISURE,0.5
+153,하나멤버스 1Q카드 내맘대로 웰빙형,LEISURE,0.07
+154,#tag1카드 Orange (태그원카드 오렌지),LEISURE,0.5
+155,CLUB PREMIER 카드 [Travel],POINT_CASHBACK,0.015
+156,CLUB PREMIER 카드 [Hotel],POINT_CASHBACK,0.015
+157,모두의 신세계 하나카드,EASY_PAY,0.05
+158,MULTI ON,EASY_PAY,0.01
+159,MULTI Living,EASY_PAY,0.01
+160,MULTI Young,EASY_PAY,0.01
+161,MULTI Any,EASY_PAY,0.01
+162,MULTI Oil,EASY_PAY,0.01
+163,하나멤버스 1Q카드 내맘대로 여행형,EASY_PAY,0.07
+164,Any PLUS (애니플러스),BEAUTY,0.007
+165,MULTI Young,CVS,0.1
+166,Any PLUS (애니플러스),CVS,0.1
+167,하나멤버스 1Q카드 내맘대로 직장인형,CVS,0.07
+168,#tag1카드 Orange (태그원카드 오렌지),CVS,0.1
+169,my pass 마패 카드,CVS,0.1

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.color_white {
+	color: white;
+}
+
+.vertical_center {
+	display: flex;
+	align-items: center;
+}
+
+.pd-top-25 {
+	padding-top: 25px
+}
