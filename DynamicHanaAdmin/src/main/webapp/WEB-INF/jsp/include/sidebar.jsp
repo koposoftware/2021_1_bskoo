@@ -41,8 +41,8 @@
 						<i class="ni ni-planet text-blue"></i> 회원분석
 				</a></li>
 				<li class="nav-item"><a class="nav-link "
-					href="${ pageContext.request.contextPath }/resources/assets/examples/maps.html">
-						<i class="ni ni-pin-3 text-orange"></i> 월간 거래 레포트 로그
+					href="${ pageContext.request.contextPath }/mail">
+						<i class="ni ni-pin-3 text-orange"></i> 안내 메일 발신
 				</a></li>
 				<li class="nav-item"><a class="nav-link "
 					href="${ pageContext.request.contextPath }/resources/assets/examples/profile.html">

@@ -6,6 +6,8 @@
 	<typeAliases>
 		<typeAlias type="kr.ac.kopo.dashboard.vo.DashboardVO"
 			alias="dashboardVO" />
+		<typeAlias type="kr.ac.kopo.admincard.vo.AdminCardVO"
+			alias="admincardVO" />
 
 
 	</typeAliases>

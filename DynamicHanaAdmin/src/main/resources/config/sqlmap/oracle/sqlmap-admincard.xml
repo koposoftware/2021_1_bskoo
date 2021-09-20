@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admincard.AdminCardDAO">
+	<resultMap type="admincardVO" id="admincardMap">
+		<result column="card_name" property="cardName" />
+		<result column="card_code" property="cardCode" />
+		<result column="email_address" property="emailAddress" />
+		<result column="member_no" property="memberNo" />
+
+
+	</resultMap>
+
+	<select id="selectReccomendationCard" resultType="list"
+		resultMap="admincardMap">
+		SELECT CARD_CODE, CARD_NAME FROM (
+		SELECT CARD_CODE,
+		CARD_NAME, COUNT(CARD_NAME) AS CNT FROM(
+		SELECT DISTINCT C.CARD_CODE,
+		C.CARD_NAME, B.CATEGORY_KOR FROM CARD C,
+		CREDITCARD_NOTICE N,
+		CARD_BENEFITS_CATEGORY B WHERE C.CARD_NAME =
+		N.CARD_NAME AND N.CATEGORY
+		= B.CATEGORY
+		AND CATEGORY_KOR IN (SELECT CATEGORY FROM PCA_COMPONENT
+		WHERE PCA_DATE =
+		TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0)+1)-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD')
+		AND CLUSTER_NO=#{no}) ORDER BY CARD_CODE)
+		GROUP BY CARD_NAME,
+		CARD_CODE)
+		WHERE CNT = (SELECT COUNT(CATEGORY) FROM PCA_COMPONENT WHERE
+		PCA_DATE =
+		TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0)+1)-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD')
+		AND CLUSTER_NO=#{no}) ORDER BY CNT
+
+	</select>
+
+	<select id="selectCardList" resultType="list"
+		resultMap="admincardMap">
+		SELECT CARD_CODE, CARD_NAME FROM CARD WHERE
+		CARD_TYPE='CREDIT' ORDER BY CARD_NAME
+
+	</select>
+
+	<select id="selectCardInfo" resultType="list"
+		resultMap="admincardMap">
+		SELECT C.CARD_CODE, C.CARD_NAME, N.NOTICE FROM CARD C,
+		CREDITCARD_NOTICE N WHERE C.CARD_NAME = N.CARD_NAME AND CARD_CODE =
+		#{no}
+
+	</select>
+
+	<select id="selectMemberCount" resultType="int"
+		parameterType="map">
+		
+		<![CDATA[
+		SELECT COUNT(*) FROM(
+		SELECT P.MEMBER_NO, M.NAME, CASE WHEN M.AGE<20 THEN 0 WHEN M.AGE<30 THEN 20 WHEN M.AGE<40 THEN 30 WHEN M.AGE<50 THEN 40 WHEN M.AGE<60 THEN 50 WHEN M.AGE<70 THEN 60 WHEN M.AGE>=70 THEN 70 END AS AGE_GROUP, M.GENDER, ADDRESS FROM T_MEMBER M, PCA_MEMBER P
+		WHERE M.MEMBER_NO = P.MEMBER_NO AND PCA_DATE = TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0)+1)-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD')
+		AND CLUSTER_NO = #{clusterNo} AND M.GENDER LIKE '%'||#{gender}||'%' AND M.ADDRESS LIKE #{region}||'%') WHERE AGE_GROUP LIKE '%'||#{age}||'%'
+		]]>
+	</select>
+
+	<select id ="selectEmailAddress" resultType="list"
+		parameterType="admincardVO" resultMap="admincardMap">
+		<![CDATA[
+		SELECT DISTINCT MEMBER_NO, NAME, EMAIL_ADDRESS FROM(
+		SELECT M.MEMBER_NO, M.NAME, M.EMAIL_ADDRESS,CASE WHEN M.AGE<20 THEN 0 WHEN M.AGE<30
+		THEN 20 WHEN M.AGE<40 THEN 30 WHEN M.AGE<50 THEN 40 WHEN M.AGE<60 THEN
+		50 WHEN M.AGE<70 THEN 60 WHEN M.AGE>=70 THEN 70 END AS AGE_GROUP,
+		M.GENDER, M.ADDRESS, NVL(P.CLUSTER_NO,0) AS CLUSTER_NO FROM T_MEMBER
+		M, PCA_MEMBER P WHERE M.MEMBER_NO = P.MEMBER_NO(+))
+		WHERE CLUSTER_NO = #{clusterNo} AND GENDER LIKE '%'||#{gender}||'%' AND ADDRESS LIKE #{region}||'%' AND
+		AGE_GROUP LIKE '%'||#{age}||'%'
+		]]>
+
+	</select>
+
+
+
+
+
+
+</mapper>

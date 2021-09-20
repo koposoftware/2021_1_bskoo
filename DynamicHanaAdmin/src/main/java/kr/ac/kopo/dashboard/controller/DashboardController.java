@@ -81,7 +81,12 @@ public class DashboardController {
 		return clusterConsumption;
 
 	}
+	
 
+	
+	
+	
+	
 	@RequestMapping("/test")
 	public ModelAndView test(HttpSession session) {
 		ModelAndView mav = new ModelAndView("test");

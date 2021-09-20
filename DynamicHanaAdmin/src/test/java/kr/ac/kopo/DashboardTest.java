@@ -60,6 +60,7 @@ public class DashboardTest {
 		
 	}
 	
+	@Ignore
 	@Test
 	public void 나이and성별() throws Exception {
 		List<DashboardVO> toptenCard = dashboardService.selectAgeGroup();
@@ -67,6 +68,8 @@ public class DashboardTest {
 		
 		
 	}
+	
+	
 	
 
 	
