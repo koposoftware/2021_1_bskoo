@@ -81,5 +81,16 @@ public class AdminCardController {
 		return memberCount;
 		
 	}
+	
+	@GetMapping("/mail/maillog")
+	public ModelAndView maillog() {
+		ModelAndView mav = new ModelAndView("maillog");
+
+		List<AdminCardVO> mailLog = adminCardService.selectMailLog();
+		mav.addObject("mailLog", mailLog);
+		
+		return mav;
+
+	}
 
 }

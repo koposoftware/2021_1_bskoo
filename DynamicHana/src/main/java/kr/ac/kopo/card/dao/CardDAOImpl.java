@@ -79,7 +79,6 @@ public class CardDAOImpl implements CardDAO {
 	}
 
 	public List<HistoryVO> selectTransactionHistory(HistoryVO history) {
-		System.out.println("DAO쪽" + history);
 		List<HistoryVO> card = sqlSessionTemplate.selectList("card.CardDAO.selectTransactionHistory", history);
 		return card;
 	}

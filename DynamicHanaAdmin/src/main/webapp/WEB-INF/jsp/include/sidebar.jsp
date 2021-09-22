@@ -5,48 +5,32 @@
 	id="sidenav-main">
 	<div class="container-fluid">
 		<!-- Brand -->
-		<a class="navbar-brand pt-0" href=""> <img
-			src="${ pageContext.request.contextPath }/resources/assets/img/brand/blue.png"
-			class="navbar-brand-img" alt="...">
+		<a href="${ pageContext.request.contextPath }/"> <img
+			src="${ pageContext.request.contextPath }/resources/assets/img/brand/logo.png"
+			alt="...">
 		</a>
 
 		<!-- Collapse -->
 		<div class="collapse navbar-collapse" id="sidenav-collapse-main">
-			<!-- Collapse header -->
-			<div class="navbar-collapse-header d-md-none">
-				<div class="row">
-					<div class="col-6 collapse-brand">
-						<a href="${ pageContext.request.contextPath }/"> <img
-							src="${ pageContext.request.contextPath }/resources/assets/img/brand/blue.png">
-						</a>
-					</div>
-					<div class="col-6 collapse-close">
-						<button type="button" class="navbar-toggler"
-							data-toggle="collapse" data-target="#sidenav-collapse-main"
-							aria-controls="sidenav-main" aria-expanded="false"
-							aria-label="Toggle sidenav">
-							<span></span> <span></span>
-						</button>
-					</div>
-				</div>
-			</div>
+
 
 			<!-- Navigation -->
 			<ul class="navbar-nav">
 				<li class="nav-item active "><a class="nav-link  active "
-					href="${ pageContext.request.contextPath }/"> <i class="ni ni-tv-2 text-primary"></i> 대시보드
+					href="${ pageContext.request.contextPath }/"> <i
+						class="ni ni-tv-2 text-primary"></i> 대시보드
 				</a></li>
 				<li class="nav-item"><a class="nav-link "
-					href="${ pageContext.request.contextPath }/cluster">
-						<i class="ni ni-planet text-blue"></i> 회원분석
+					href="${ pageContext.request.contextPath }/cluster"> <i
+						class="ni ni-planet text-blue"></i> 회원분석
 				</a></li>
 				<li class="nav-item"><a class="nav-link "
-					href="${ pageContext.request.contextPath }/mail">
-						<i class="ni ni-pin-3 text-orange"></i> 안내 메일 발신
+					href="${ pageContext.request.contextPath }/mail"> <i
+						class="ni ni-pin-3 text-orange"></i> 안내 메일 발신
 				</a></li>
 				<li class="nav-item"><a class="nav-link "
-					href="${ pageContext.request.contextPath }/resources/assets/examples/profile.html">
-						<i class="ni ni-single-02 text-yellow"></i> 카드 추가
+					href="${ pageContext.request.contextPath }/mail/maillog"> <i
+						class="ni ni-single-02 text-yellow"></i> 메일 발신 로그
 				</a></li>
 
 			</ul>

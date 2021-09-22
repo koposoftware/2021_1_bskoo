@@ -97,7 +97,7 @@
 
 	var label_2 = []
 	var data_2 = []
-	
+
 	<c:forEach items="${requestScope.monthlyConsumption }" var="monthlyConsumption"
 		varStatus="loop">
 	data_2.push(parseFloat("${ monthlyConsumption.subTotalDouble }"))
@@ -164,7 +164,7 @@
 
 </head>
 
-<body class="">
+<body>
 	<jsp:include page="./include/sidebar.jsp" />
 	<div class="main-content">
 		<!-- Navbar -->
@@ -414,7 +414,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row mt-5">
 				<div class="col-xl-8 mb-5 mb-xl-0">
 					<div class="card shadow">
@@ -431,10 +431,10 @@
 							<table class="table align-items-center table-flush">
 								<thead class="thead-light">
 									<tr>
-										<th scope="col">카드명</th>
-										<th scope="col">총 회원</th>
-										<th scope="col">이번달 가입 회원</th>
-										<th scope="col">지난달 대비 가입자</th>
+										<th scope="col" class="text-center">카드명</th>
+										<th scope="col" class="text-center">총 회원</th>
+										<th scope="col" class="text-center">이번달 가입 회원</th>
+										<th scope="col" class="text-center">지난달 대비 가입자</th>
 									</tr>
 								</thead>
 
@@ -443,19 +443,23 @@
 										varStatus="loop">
 										<tr>
 											<td scope="row"><c:out value="${ topTenCard.cardName }" /></td>
-											<td><c:out value="${ topTenCard.cnt }" /></td>
-											<td><c:out value="${ topTenCard.thisMonth }" /></td>
+											<td class="text-center"><c:out
+													value="${ topTenCard.cnt }" /></td>
+											<td class="text-center"><c:out
+													value="${ topTenCard.thisMonth }" /></td>
 
 											<c:choose>
 												<c:when
 													test="${ topTenCard.thisMonth+0 > topTenCard.lastMonth+0}">
-													<td><i class="fas fa-arrow-up text-success mr-3"></i>
-														<c:out value="${ topTenCard.ratio }" /> %</td>
+													<td class="text-center"><i
+														class="fas fa-arrow-up text-success mr-3"></i> <c:out
+															value="${ topTenCard.ratio }" /> %</td>
 												</c:when>
 												<c:when
 													test="${ topTenCard.thisMonth+0 < topTenCard.lastMonth+0}">
-													<td><i class="fas fa-arrow-down text-warning mr-3"></i>
-														<c:out value="${ topTenCard.ratio }" /> %</td>
+													<td class="text-center"><i
+														class="fas fa-arrow-down text-warning mr-3"></i> <c:out
+															value="${ topTenCard.ratio }" /> %</td>
 												</c:when>
 											</c:choose>
 										</tr>
@@ -494,15 +498,15 @@
 							<table class="table align-items-center table-flush">
 								<thead class="thead-light">
 									<tr>
-										<th scope="col">시간대</th>
-										<th scope="col">소비 건수</th>
+										<th scope="col" class="text-center">시간대</th>
+										<th scope="col" class="text-center">소비 건수</th>
 										<th scope="col"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<th scope="row">아침</th>
-										<td><fmt:formatNumber
+										<th scope="row" class="text-center">아침</th>
+										<td class="text-center"><fmt:formatNumber
 												value="${ consumptionTimeSolt.morning }" pattern="#,###" />
 											건</td>
 										<td>
@@ -523,8 +527,8 @@
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">점심</th>
-										<td><fmt:formatNumber
+										<th scope="row" class="text-center">점심</th>
+										<td class="text-center"><fmt:formatNumber
 												value="${ consumptionTimeSolt.lunch }" pattern="#,###" /> 건</td>
 										<td>
 											<div class="d-flex align-items-center">
@@ -545,8 +549,8 @@
 									</tr>
 
 									<tr>
-										<th scope="row">저녁</th>
-										<td><fmt:formatNumber
+										<th scope="row" class="text-center">저녁</th>
+										<td class="text-center"><fmt:formatNumber
 												value="${ consumptionTimeSolt.dinner }" pattern="#,###" />
 											건</td>
 										<td>
@@ -567,8 +571,8 @@
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">야간</th>
-										<td><fmt:formatNumber
+										<th scope="row" class="text-center">야간</th>
+										<td class="text-center"><fmt:formatNumber
 												value="${ consumptionTimeSolt.night }" pattern="#,###" /> 건</td>
 										<td>
 											<div class="d-flex align-items-center">
@@ -594,7 +598,8 @@
 					</div>
 				</div>
 			</div>
-
+			<!-- Footer -->
+			<jsp:include page="./include/bottom.jsp" />
 		</div>
 	</div>
 

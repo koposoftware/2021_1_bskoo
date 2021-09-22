@@ -26,6 +26,7 @@
 		pieChart2Draw();
 	}
 
+	/* chart1 */
 	let pieChartData = {
 		labels : [ '남성', '여성' ],
 		datasets : [ {

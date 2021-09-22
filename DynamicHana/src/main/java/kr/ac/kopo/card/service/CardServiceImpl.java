@@ -135,8 +135,6 @@ public class CardServiceImpl implements CardService {
 		userhistory.setCategory(category);
 		userhistory.setTxt(txt);
 
-		System.out.println(vo.getStart());
-		System.out.println(vo.getEnd());
 		List<HistoryVO> history = cardDAO.selectTransactionHistory(userhistory);
 
 		return history;

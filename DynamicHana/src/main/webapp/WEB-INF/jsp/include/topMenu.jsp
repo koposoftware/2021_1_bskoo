@@ -94,6 +94,12 @@
 	href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 
+<link
+	href="${ pageContext.request.contextPath }/resources/dashboard/mdi-font/css/material-design-iconic-font.min.css"
+	rel="stylesheet" media="all">
+
+
+
 </head>
 
 
@@ -121,10 +127,9 @@
 											카드</a></li>
 									<li><a href="${ pageContext.request.contextPath }/cardSelect">실시간
 											카드 내역서</a></li>
-									<li><a href="${ pageContext.request.contextPath }/">월간
+									<li><a href="${ pageContext.request.contextPath }/cardAuth">월간
 											거래 리포트</a></li>
-									<li><a href="${ pageContext.request.contextPath }/">총
-											거래 분석</a></li>
+									<li><a href="${ pageContext.request.contextPath }/">고객센터</a></li>
 									<!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="candidate.html">Candidates </a></li>

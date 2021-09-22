@@ -46,6 +46,16 @@ public class AdminCardDAOImpl implements AdminCardDAO{
 		List<AdminCardVO> emailList = sqlSessionTemplate.selectList("admincard.AdminCardDAO.selectEmailAddress", vo);
 		return emailList;
 	}
+	
+	public void insertMailLog(AdminCardVO vo) {
+		sqlSessionTemplate.insert("admincard.AdminCardDAO.insertMailLog", vo);
+	}
+
+
+	public List<AdminCardVO> selectMailLog() {
+		List<AdminCardVO> mailLog = sqlSessionTemplate.selectList("admincard.AdminCardDAO.selectMailLog");
+		return mailLog;
+	}
 
 	
 	

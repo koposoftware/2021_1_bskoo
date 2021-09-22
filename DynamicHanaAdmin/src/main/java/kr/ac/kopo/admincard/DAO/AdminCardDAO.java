@@ -15,4 +15,8 @@ public interface AdminCardDAO {
 	int selectMemberCount(Map<String, Object> param);
 
 	List<AdminCardVO> selectEmailAddress(AdminCardVO vo);
+	
+	void insertMailLog(AdminCardVO vo);
+	
+	List<AdminCardVO> selectMailLog();
 }

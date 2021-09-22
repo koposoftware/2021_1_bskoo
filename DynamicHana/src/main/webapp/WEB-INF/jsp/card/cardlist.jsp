@@ -340,7 +340,7 @@
 												<div class="col-lg-12 col-md-12">
 													<div
 														class="single_jobs white-bg d-flex justify-content-between"
-														style="width: 827px">
+														style="width: 945px">
 														<div class="jobs_left d-flex align-items-center">
 															<div class="thumb" style="width: 150px; padding: 0">
 																<a href="detail/${ cardList.cardCode }"><img
@@ -394,9 +394,6 @@
 																</a> -->
 																<a href="detail/${ cardList.cardCode }"
 																	class="boxed-btn3">상세 혜택</a>
-															</div>
-															<div class="date">
-																<p>n명의 선택을 받은 카드!</p>
 															</div>
 														</div>
 													</div>

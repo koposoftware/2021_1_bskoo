@@ -12,5 +12,9 @@
 		<typeAlias type="kr.ac.kopo.card.vo.DemographyVO" alias="demographyVO"/>
 		<typeAlias type="kr.ac.kopo.card.vo.HistoryVO" alias="historyVO"/>
 		
+		<typeAlias type="kr.ac.kopo.stmt.vo.StmtVO" alias="stmtVO"/>
+		
+		
+		
 	</typeAliases>
 </configuration>

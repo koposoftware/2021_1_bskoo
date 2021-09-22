@@ -15,13 +15,22 @@ public class AdminCardVO {
 	private int memberNo;
 	private String name;
 
+	private int cnt;
+
+	private int mailNo;
+	private String sendingDate;
+	private int total;
+	private int sendingSuccess;
+	private int sendingFail;
+
 	public AdminCardVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public AdminCardVO(String cardCode, String cardName, String notice, String age, String gender, String region,
-			String clusterNo, String mailContent, String emailAddress, int memberNo, String name) {
+			String clusterNo, String mailContent, String emailAddress, int memberNo, String name, int cnt, int mailNo,
+			String sendingDate, int total, int sendingSuccess, int sendingFail) {
 		super();
 		this.cardCode = cardCode;
 		this.cardName = cardName;
@@ -34,6 +43,12 @@ public class AdminCardVO {
 		this.emailAddress = emailAddress;
 		this.memberNo = memberNo;
 		this.name = name;
+		this.cnt = cnt;
+		this.mailNo = mailNo;
+		this.sendingDate = sendingDate;
+		this.total = total;
+		this.sendingSuccess = sendingSuccess;
+		this.sendingFail = sendingFail;
 	}
 
 	public String getCardCode() {
@@ -124,11 +139,61 @@ public class AdminCardVO {
 		this.name = name;
 	}
 
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+
+	public int getMailNo() {
+		return mailNo;
+	}
+
+	public void setMailNo(int mailNo) {
+		this.mailNo = mailNo;
+	}
+
+	public String getSendingDate() {
+		return sendingDate;
+	}
+
+	public void setSendingDate(String sendingDate) {
+		this.sendingDate = sendingDate;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public int getSendingSuccess() {
+		return sendingSuccess;
+	}
+
+	public void setSendingSuccess(int sendingSuccess) {
+		this.sendingSuccess = sendingSuccess;
+	}
+
+	public int getSendingFail() {
+		return sendingFail;
+	}
+
+	public void setSendingFail(int sendingFail) {
+		this.sendingFail = sendingFail;
+	}
+
 	@Override
 	public String toString() {
 		return "AdminCardVO [cardCode=" + cardCode + ", cardName=" + cardName + ", notice=" + notice + ", age=" + age
 				+ ", gender=" + gender + ", region=" + region + ", clusterNo=" + clusterNo + ", mailContent="
-				+ mailContent + ", emailAddress=" + emailAddress + ", memberNo=" + memberNo + ", name=" + name + "]";
+				+ mailContent + ", emailAddress=" + emailAddress + ", memberNo=" + memberNo + ", name=" + name
+				+ ", cnt=" + cnt + ", mailNo=" + mailNo + ", sendingDate=" + sendingDate + ", total=" + total
+				+ ", sendingSuccess=" + sendingSuccess + ", sendingFail=" + sendingFail + "]";
 	}
 
 }

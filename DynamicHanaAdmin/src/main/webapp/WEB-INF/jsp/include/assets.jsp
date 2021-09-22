@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- Favicon -->
-<!-- // 나중에 인클루드로 빼 -->
-<link
-	href="${ pageContext.request.contextPath }/resources/assets/img/brand/favicon.png"
-	rel="icon" type="image/png">
+
 <!-- Fonts -->
 <link
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"

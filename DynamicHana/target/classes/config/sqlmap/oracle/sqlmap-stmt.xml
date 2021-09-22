@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stmt.StmtDAO">
+	<resultMap type="stmtVO" id="stmtMap">
+		<result column="card_name" property="cardName" />
+		<result column="sub_total" property="subTotal" />
+		<result column="history_date" property="historyDate" />
+
+	</resultMap>
+
+	<select id="selectCardName" parameterType="String"
+		resultType="String">
+		SELECT C.CARD_NAME FROM
+		MEMBER_CARD M,
+		CARD C WHERE
+		M.CARD_CODE = C.CARD_CODE AND
+		M.CARD_NO=#{cardNo}
+
+	</select>
+
+	<select id="selectCardMainInfo" parameterType="String"
+		resultMap="stmtMap">
+		SELECT SUM(AMOUNT) AS SUB_TOTAL, COUNT(AMOUNT) AS CNT,
+		EXTRACT(MONTH FROM SYSDATE)-1 AS MONTH FROM TRANSACTION_HISTORY WHERE
+		CARD_NO = #{cardNo} AND HISTORY_DATE BETWEEN
+		TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE+1,-1))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD')
+		AND
+		TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD')
+
+	</select>
+
+
+
+	<select id="selectCardMainCategory" parameterType="String"
+		resultMap="stmtMap">
+		<![CDATA[
+		SELECT CATEGORY FROM(
+SELECT CATEGORY, COUNT(CATEGORY) AS CNT FROM TRANSACTION_HISTORY WHERE CARD_NO = #{cardNo} AND HISTORY_DATE BETWEEN  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE+1,-1))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') AND  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') GROUP BY CATEGORY ORDER BY CNT DESC) WHERE ROWNUM<=1
+]]>
+	</select>
+
+	<select id="selectTopFive" parameterType="String"
+		resultMap="stmtMap">
+		<![CDATA[
+		SELECT ROWNUM||'. ' || STORE AS CATEGORY, AMOUNT AS SUB_TOTAL FROM(
+SELECT * FROM TRANSACTION_HISTORY WHERE CARD_NO='1111-1111-2222-2222' AND HISTORY_DATE BETWEEN  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE+1,-1))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') AND  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') ORDER BY AMOUNT DESC) WHERE ROWNUM<=5
+]]>
+	</select>
+
+	<select id="selectCategoryConsumption" parameterType="String"
+		resultMap="stmtMap">
+		<![CDATA[
+		SELECT CATEGORY, SUM(AMOUNT) AS SUB_TOTAL FROM(
+SELECT CATEGORY, AMOUNT FROM TRANSACTION_HISTORY WHERE CARD_NO=#{cardNo} AND HISTORY_DATE BETWEEN  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE+1,-1))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') AND  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD')) GROUP BY CATEGORY ORDER BY SUB_TOTAL DESC
+]]>
+	</select>
+
+	<select id="selectWeeklyConsumption" parameterType="String"
+		resultMap="stmtMap">
+		<![CDATA[
+		SELECT ROWNUM||'주차' AS CATEGORY, SUB_TOTAL FROM (
+SELECT WEEK, SUM(AMOUNT) AS SUB_TOTAL FROM (
+SELECT TO_CHAR(HISTORY_DATE,'IW') AS WEEK, AMOUNT FROM TRANSACTION_HISTORY WHERE CARD_NO=#{cardNo} AND TO_CHAR(HISTORY_DATE,'IW') BETWEEN  TO_CHAR(TO_DATE(TRUNC(ADD_MONTHS(SYSDATE+1,-1))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD'),'IW') AND TO_CHAR(TO_DATE(TRUNC(ADD_MONTHS(SYSDATE,0))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD'),'IW')) GROUP BY WEEK ORDER BY WEEK)
+]]>
+	</select>
+
+	<select id="selectMonthlyConsumption" resultMap="stmtMap"
+		resultType="list">
+		<![CDATA[
+		SELECT RN AS NO, HISTORY_DATE, STORE, AMOUNT FROM (SELECT ROWNUM RN,
+		A.* FROM
+		(SELECT ROWNUM AS NO, HISTORY_DATE, STORE, AMOUNT FROM(
+SELECT HISTORY_DATE, STORE, AMOUNT FROM TRANSACTION_HISTORY WHERE CARD_NO=#{cardNo} AND HISTORY_DATE BETWEEN  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE+1,-1))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') AND  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') ORDER BY HISTORY_DATE DESC) ORDER BY
+		HISTORY_DATE DESC) A
+		)
+		WHERE RN
+		BETWEEN
+		#{start} AND #{end}
+]]>
+	</select>
+
+
+	<select id="selectMonthlyLength" parameterType="String"
+		resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) FROM TRANSACTION_HISTORY WHERE CARD_NO=#{cardNo} AND HISTORY_DATE BETWEEN  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE+1,-1))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD') AND  TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE,0))-TO_CHAR(SYSDATE,'DD'),'YYYY-MM-DD')
+]]>
+	</select>
+
+
+
+</mapper>

@@ -15,4 +15,6 @@ public interface AdminCardService {
 	int selectMemberCount(Map<String, Object> param);
 	
 	void sendingMail(AdminCardVO vo);
+	
+	List<AdminCardVO> selectMailLog();
 }

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -10,8 +10,7 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Argon Dashboard - Free Dashboard for Bootstrap 4 by
-	Creative Tim</title>
+<title>하나카드 다이나믹하나 관리자페이지</title>
 <jsp:include page="./include/assets.jsp" />
 </head>
 <script>
@@ -226,26 +225,27 @@
 							<table class="table align-items-center table-flush">
 								<thead class="thead-light">
 									<tr>
-										<th scope="col">군집</th>
-										<th scope="col">소속회원 수</th>
-										<th scope="col">주요소비처</th>
-										<th scope="col">군집 비율</th>
-										<th scope="col">군집 특성</th>
-										<th scope="col">전체메일 보내기</th>
+										<th scope="col" class="text-center">군집</th>
+										<th scope="col" class="text-center">소속회원 수</th>
+										<th scope="col" class="text-center">주요소비처</th>
+										<th scope="col" class="text-center">군집 비율</th>
+										<th scope="col" class="text-center">군집 특성</th>
+										<th scope="col" class="text-center">전체메일 보내기</th>
 									</tr>
 								</thead>
 								<tbody>
 									<c:forEach items="${requestScope.memberCluster }"
 										var="memberCluster" varStatus="loop">
 										<tr>
-											<th scope="row">
+											<th scope="row" class="text-center">
 
 												<div class="media-body">
 													<span class="mb-0 text-sm"><c:out
 															value="${ memberCluster.clusterName }" /></span>
 												</div>
 											</th>
-											<td><c:out value="${ memberCluster.cnt }" /> 명</td>
+											<td class="text-center"><c:out
+													value="${ memberCluster.cnt }" /> 명</td>
 											<td><c:out value="${ memberCluster.category }" /></td>
 											<td>
 												<div class="d-flex align-items-center">
@@ -261,14 +261,15 @@
 													</div>
 												</div>
 											</td>
-											<td><button type="button" class="btn btn-sm btn-primary"
-													data-toggle="modal" data-target="#modal-default"
+											<td class="text-center"><button type="button"
+													class="btn btn-sm btn-primary" data-toggle="modal"
+													data-target="#modal-default"
 													onclick="showGraph(${ memberCluster.clusterNo })">
 													<c:out value="${ memberCluster.clusterName }" />
 													그래프
 												</button></td>
-											<td><div class="col-4 text-right">
-													<a href="#!" class="btn btn-sm btn-primary">메일보내기</a>
+											<td class="text-center"><div class="text-center" class="col-4 text-right">
+													<a href="${ pageContext.request.contextPath }/mail" class="btn btn-sm btn-primary">메일보내기</a>
 												</div></td>
 
 										</tr>
@@ -364,7 +365,7 @@
 									<tr>
 										<th scope="col">거래건수</th>
 										<th scope="col">회원 수</th>
-										<th scope="col">회원 수 비율</th>
+										<th scope="col" class="text-center">회원 수 비율</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -418,7 +419,7 @@
 									<tr>
 										<th scope="col">거래금액</th>
 										<th scope="col">회원 수</th>
-										<th scope="col">회원 수 비율</th>
+										<th scope="col" class="text-center">회원 수 비율</th>
 									</tr>
 								</thead>
 								<tbody>

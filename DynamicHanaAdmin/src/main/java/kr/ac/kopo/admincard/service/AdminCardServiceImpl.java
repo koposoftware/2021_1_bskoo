@@ -56,7 +56,6 @@ public class AdminCardServiceImpl implements AdminCardService {
 		String mail_id = "99bonseong@gmail.com";
 		String mail_pw = "6dnjf2dlf!@#";
 
-		System.out.println(emailList);
 
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -101,7 +100,24 @@ public class AdminCardServiceImpl implements AdminCardService {
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
+		
+		vo.setCnt(emailList.size());
+		writeLog(vo);
+		
 
 	}
+	
+	public void writeLog(AdminCardVO vo) {
+		adminCardDAO.insertMailLog(vo);
+		
+		
+	}
+
+	public List<AdminCardVO> selectMailLog() {
+		List<AdminCardVO> mailLog = adminCardDAO.selectMailLog();
+		return mailLog;
+	}
+	
+	
 
 }

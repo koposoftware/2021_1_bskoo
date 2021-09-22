@@ -12,8 +12,7 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Argon Dashboard - Free Dashboard for Bootstrap 4 by
-	Creative Tim</title>
+<title>하나카드 다이나믹하나 관리자페이지</title>
 <jsp:include page="./include/assets.jsp" />
 </head>
 <script>
@@ -153,16 +152,17 @@
 
 		content += '고객님의 소비 생활에 더 큰 혜택을 드리기 위해 [' + cardName + ']을 추천드립니다.\n\n'
 		content += cardName
-		content += '은 다음과 같은 혜택을 제공합니다.\n'
+		content += '은 다음과 같은 혜택을 제공합니다.\n\n'
 
 		for (var i = 0; i < benefit.length; i++) {
+			content += '• '
 			content += benefit[i]
 			content += '\n'
 		}
 
-		content += '\n\n'
+		content += '\n'
 		content += cardName + '의 자세한 정보는 다이나믹하나를 참조해주세요!\n'
-		content += 'http://192.168.119.1:8080/DynamicHana/detail/' + cardCode
+		content += 'http://localhost:8080/DynamicHana/detail/' + cardCode
 		document.getElementById("mailContent").value = content
 
 	}

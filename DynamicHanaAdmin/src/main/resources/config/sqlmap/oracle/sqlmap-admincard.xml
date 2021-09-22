@@ -9,6 +9,14 @@
 		<result column="email_address" property="emailAddress" />
 		<result column="member_no" property="memberNo" />
 
+		<result column="cluster_no" property="clusterNo" />
+		<result column="mail_no" property="mailNo" />
+		<result column="sending_date" property="sendingDate" />
+		<result column="sending_success" property="sendingSuccess" />
+		<result column="sending_fail" property="sendingFail" />
+		
+		
+
 
 	</resultMap>
 
@@ -62,7 +70,7 @@
 		]]>
 	</select>
 
-	<select id ="selectEmailAddress" resultType="list"
+	<select id="selectEmailAddress" resultType="list"
 		parameterType="admincardVO" resultMap="admincardMap">
 		<![CDATA[
 		SELECT DISTINCT MEMBER_NO, NAME, EMAIL_ADDRESS FROM(
@@ -76,6 +84,24 @@
 		]]>
 
 	</select>
+	<select id="selectMailLog" resultType="list"
+		resultMap="admincardMap">
+		SELECT L.MAIL_NO,
+		TO_CHAR(L.SENDING_DATE, 'YYYY-MM-DD
+		HH24:MI:SS') AS SENDING_DATE,
+		C.CARD_NAME, L.CLUSTER_NO, L.TOTAL,
+		L.SENDING_SUCCESS,
+		(L.TOTAL-L.SENDING_SUCCESS) AS SENDING_FAIL FROM
+		CARD C, MAIL_LOG L
+		WHERE C.CARD_CODE = L.CARD_CODE ORDER BY MAIL_NO DESC
+
+	</select>
+
+	<insert id="insertMailLog" parameterType="admincardVO">
+		INSERT INTO
+		MAIL_LOG(CLUSTER_NO, CARD_CODE, TOTAL, SENDING_SUCCESS)
+		VALUES(#{clusterNo}, #{cardCode}, #{cnt}, #{cnt})
+	</insert>
 
 
 
