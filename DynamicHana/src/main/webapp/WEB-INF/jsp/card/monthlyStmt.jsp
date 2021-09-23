@@ -58,7 +58,8 @@
  --%>
 
 <link
-	href="${pageContext.request.contextPath}/resources/dashboard/theme.css" rel="stylesheet" media="all">
+	href="${pageContext.request.contextPath}/resources/dashboard/theme.css"
+	rel="stylesheet" media="all">
 <script
 	src="https://raw.githubusercontent.com/google/palette.js/master/palette.js"></script>
 <script
@@ -108,7 +109,6 @@
 		}
 	}
 
-	console.log(max_index)
 
 	let barChartDraw = function() {
 		$("#ch1_span1").text(label_1[max_index] + "에 ")
@@ -503,10 +503,10 @@
 							<thead>
 								<tr>
 
-									<th class = "txt-center" style="font-size: 20px">거래순번</th>
-									<th class = "txt-center" style="font-size: 20px">일자</th>
-									<th class = "txt-center" style="font-size: 20px">가맹점</th>
-									<th class = "txt-center" style="font-size: 20px">금액</th>
+									<th class="txt-center" style="font-size: 20px">NO</th>
+									<th class="txt-center" style="font-size: 20px">일자</th>
+									<th class="txt-center" style="font-size: 20px">가맹점</th>
+									<th class="txt-center" style="font-size: 20px">금액</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -514,13 +514,13 @@
 									var="monthlyConsumption" varStatus="status">
 									<tr class="tr-shadow">
 
-										<td class = "txt-center" style="font-size: 20px"><c:out
+										<td class="txt-center" style="font-size: 20px"><c:out
 												value="${ monthlyConsumption.no }" /></td>
-										<td class = "txt-center" style="font-size: 20px"><c:out
+										<td class="txt-center" style="font-size: 20px"><c:out
 												value="${ monthlyConsumption.historyDate }" /></td>
-										<td class = "txt-center"  style="font-size: 20px"><c:out
+										<td class="txt-center" style="font-size: 20px"><c:out
 												value="${ monthlyConsumption.store }" /></td>
-										<td class = "txt-center"  style="font-size: 20px"><fmt:formatNumber
+										<td class="txt-center" style="font-size: 20px"><fmt:formatNumber
 												value="${monthlyConsumption.amount }" pattern="#,###" /> 원</td>
 
 
@@ -558,6 +558,20 @@
 		</div>
 	</section>
 	<!-- END DATA TABLE-->
+	<div class="mt-30"></div>
+	<div style="text-align: center">
+		<span> <a href="${pageContext.request.contextPath}/">
+				<button class="au-btn au-btn-icon au-btn--green au-btn--small">
+					<i class="zmdi zmdi-home"></i>돌아가기
+				</button>
+		</a>
+		</span> <span> <a href="${pageContext.request.contextPath}/monthlyStmt2">
+				<button class="au-btn au-btn-icon au-btn--green au-btn--small">
+					<i class="zmdi zmdi-play"></i>다음 페이지
+				</button>
+		</a></span>
+	</div>
+	<div class="mt-30"></div>
 
 
 	<!-- footer start -->

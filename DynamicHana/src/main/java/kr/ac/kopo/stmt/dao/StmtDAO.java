@@ -21,5 +21,23 @@ public interface StmtDAO {
 	int selectMonthlyLength(String cardNo);
 	
 	List<StmtVO> selectMonthlyConsumption(StmtVO stmt);
+	
+	List<StmtVO> selectTimeSlot(String cardNo);
+	
+	List<StmtVO> selectWeekday(String cardNo);
+	
+	int checkPCAMember(String cardNo);
+	
+	List<StmtVO> selectPersonalCategoryPCA(String cardNo);
+	
+	List<StmtVO> selectPersonalCategoryNonePCA(String cardNo);
+	
+	List<StmtVO> selectPersonalCategoryConsumptionPCA(String cardNo);
+	
+	List<StmtVO> selectPersonalCategoryConsumptionNonePCA(String cardNo);
+	
+	List<StmtVO> selectPersonalCardPCA(String cardNo);
+	
+	List<StmtVO> selectPersonalCardNonePCA(String cardNo);
 }
 

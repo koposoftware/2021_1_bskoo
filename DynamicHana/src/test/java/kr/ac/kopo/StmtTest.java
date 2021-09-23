@@ -1,6 +1,5 @@
 package kr.ac.kopo;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,11 +35,52 @@ public class StmtTest {
 	@Autowired
 	private CardDAO cardDAO;
 
+	@Ignore
 	@Test
 	public void 카드리스트Test() throws Exception {
 		//List<StmtVO> list = stmtService.selectMonthlyConsumption("1111-1111-2222-2222");
 
-
+	}
+	
+	@Ignore
+	@Test
+	public void 타임슬롯Test() throws Exception {
+		List<StmtVO> timeslot = stmtService.selectTimeSlot("1111-1111-2222-2222");
+		System.out.println(timeslot);
+		
+	}
+	
+	@Ignore
+	@Test
+	public void PCA멤버Test() throws Exception {
+		int timeslot = stmtService.checkPCAMember("1111-1111-2222-2222");
+		System.out.println(timeslot);
+		
+	}
+	
+	@Ignore
+	@Test
+	public void PCA카테고리() throws Exception {
+		List<StmtVO> list = stmtService.selectPersonalCategory("1111-1111-2222-2222");
+		System.out.println(list);
+		
+		
+	}
+	
+	@Ignore
+	@Test
+	public void PCA카테고리소비내역() throws Exception {
+		List<StmtVO> list = stmtService.selectPersonalCategoryConsumption("1111-1111-2222-2222");
+		System.out.println(list);
+		
+		
+	}
+	@Test
+	public void PCA카드추천() throws Exception {
+		List<StmtVO> list = stmtService.selectPersonalCard("1111-1111-2222-2222");
+		System.out.println(list);
+		
+		
 	}
 	
 

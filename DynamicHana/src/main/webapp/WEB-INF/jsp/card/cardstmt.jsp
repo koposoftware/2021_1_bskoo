@@ -292,9 +292,6 @@ function numberWithCommas(x) {
 		
 	
 </script>
-<script>
-
-</script>
 </head>
 
 <body>

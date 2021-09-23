@@ -21,4 +21,16 @@ public interface StmtService {
 	int selectMonthlyLength(String cardNo);
 	
 	List<StmtVO> selectMonthlyConsumption(String cardNo, PagingVO vo);
+	
+	List<StmtVO> selectTimeSlot(String cardNo);
+	
+	List<StmtVO> selectWeekday(String cardNo);
+	
+	List<StmtVO> selectPersonalCategory(String cardNo);
+
+	int checkPCAMember(String string);
+	
+	List<StmtVO> selectPersonalCategoryConsumption(String cardNo);
+	
+	List<StmtVO> selectPersonalCard(String cardNo);
 }

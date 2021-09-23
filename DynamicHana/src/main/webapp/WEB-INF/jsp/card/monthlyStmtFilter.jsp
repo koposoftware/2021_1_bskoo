@@ -3,15 +3,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<style>
+.txt-center {
+	text-align:center;
+	
+}
+</style>
 
 <table class="table table-data2" style="font-size: 18px">
 	<thead>
 		<tr>
 
-			<th style="font-size: 20px">거래순번</th>
-			<th style="font-size: 20px">일자</th>
-			<th style="font-size: 20px">가맹점</th>
-			<th style="font-size: 20px">금액</th>
+			<th class="txt-center" style="font-size: 20px">거래순번</th>
+			<th class="txt-center" style="font-size: 20px">일자</th>
+			<th class="txt-center" style="font-size: 20px">가맹점</th>
+			<th class="txt-center" style="font-size: 20px">금액</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,13 +25,13 @@
 			var="monthlyConsumption" varStatus="status">
 			<tr class="tr-shadow">
 
-				<td style="font-size: 20px"><c:out
+				<td class="txt-center" style="font-size: 20px"><c:out
 						value="${ monthlyConsumption.no }" /></td>
-				<td style="font-size: 20px"><c:out
+				<td class="txt-center" style="font-size: 20px"><c:out
 						value="${ monthlyConsumption.historyDate }" /></td>
-				<td style="font-size: 20px"><c:out
+				<td class="txt-center" style="font-size: 20px"><c:out
 						value="${ monthlyConsumption.store }" /></td>
-				<td style="font-size: 20px"><fmt:formatNumber
+				<td class="txt-center" style="font-size: 20px"><fmt:formatNumber
 						value="${monthlyConsumption.amount }" pattern="#,###" /> 원</td>
 
 

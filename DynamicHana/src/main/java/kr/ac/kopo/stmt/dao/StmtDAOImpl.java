@@ -55,9 +55,53 @@ public class StmtDAOImpl implements StmtDAO{
 		List<StmtVO> monthlyConsumption = sqlSessionTemplate.selectList("stmt.StmtDAO.selectMonthlyConsumption", stmt);
 		return monthlyConsumption;
 	}
-	
-	
-	
+
+	public List<StmtVO> selectTimeSlot(String cardNo) {
+		List<StmtVO> timeslot = sqlSessionTemplate.selectList("stmt.StmtDAO.selectTimeSlot", cardNo);
+		return timeslot;
+	}
+
+	public List<StmtVO> selectWeekday(String cardNo) {
+		List<StmtVO> weekday = sqlSessionTemplate.selectList("stmt.StmtDAO.selectWeekday", cardNo);
+		return weekday;
+	}
+
+	public int checkPCAMember(String cardNo) {
+		int result = sqlSessionTemplate.selectOne("stmt.StmtDAO.checkPCAMember", cardNo);
+		return result;
+	}
+
+	public List<StmtVO> selectPersonalCategoryPCA(String cardNo) {
+		List<StmtVO> personalCategory = sqlSessionTemplate.selectList("stmt.StmtDAO.selectPersonalCategoryPCA", cardNo);
+		return personalCategory;
+	}
+
+	public List<StmtVO> selectPersonalCategoryNonePCA(String cardNo) {
+		List<StmtVO> personalCategory = sqlSessionTemplate.selectList("stmt.StmtDAO.selectPersonalCategoryNonePCA", cardNo);
+		return personalCategory;
+	}
+
+	public List<StmtVO> selectPersonalCategoryConsumptionPCA(String cardNo) {
+		List<StmtVO> personalCategoryConsumptionPCA = sqlSessionTemplate.selectList("stmt.StmtDAO.selectPersonalCategoryConsumptionPCA", cardNo);
+		return personalCategoryConsumptionPCA;
+	}
+
+	public List<StmtVO> selectPersonalCategoryConsumptionNonePCA(String cardNo) {
+		List<StmtVO> personalCategoryConsumptionPCA = sqlSessionTemplate.selectList("stmt.StmtDAO.selectPersonalCategoryConsumptionNonePCA", cardNo);
+		return personalCategoryConsumptionPCA;
+	}
+
+	public List<StmtVO> selectPersonalCardPCA(String cardNo) {
+		List<StmtVO> personalCard = sqlSessionTemplate.selectList("stmt.StmtDAO.selectPersonalCardPCA", cardNo);
+		return personalCard;
+	}
+
+	public List<StmtVO> selectPersonalCardNonePCA(String cardNo) {
+		List<StmtVO> personalCard = sqlSessionTemplate.selectList("stmt.StmtDAO.selectPersonalCardNonePCA", cardNo);
+		return personalCard;
+	}
+
+
 	
 	
 	
