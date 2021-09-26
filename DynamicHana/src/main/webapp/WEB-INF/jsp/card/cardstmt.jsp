@@ -81,7 +81,6 @@ function numberWithCommas(x) {
 	               responsive: false,
 	               title : {
 	                  display : false,
-	                  text : '일별 사업장 매출 현황',
 	                  fontSize : 20
 	               },
 	               legend : {
@@ -100,9 +99,10 @@ function numberWithCommas(x) {
 	                  yAxes : [{
 	                     
 	                     ticks : {
-	                    	max : max_value+20000,
+	                    	max : max_value+50000,
 	                        stepSize: 40000,
 	                        beginAtZero: true,
+	                        maxTicksLimit : 7,
 	                        fontSize : 14,
 	                        userCallback:function(value, index, values){
 	                        	value=value.toString();
@@ -184,6 +184,7 @@ function numberWithCommas(x) {
 	               },
 	               scales : {
 	                   xAxes: [{
+	                	   maxTick:7,
 	                           barPercentage: 0.4,
 	                           gridLines: {
 	                               color: "rgba(0, 0, 0, 0)"
@@ -195,8 +196,9 @@ function numberWithCommas(x) {
 	                  yAxes : [{
 	                     
 	                     ticks : {
-	                    	max : max_value2+20000,
+	                    	max : max_value2+50000,
 	                        stepSize: 40000,
+	                        maxTicksLimit : 7,
 	                        beginAtZero: true,
 	                        fontSize : 14,
 	                        userCallback:function(value, index, values){
@@ -272,13 +274,6 @@ function numberWithCommas(x) {
 				$('#historyTable').empty()
 				$('#historyTable').html(data)
 				
-				console.log("nowPage : " + nowPage)
-				console.log("cntPerPage : " + cntPerPage) 
-				console.log("석세스")
-				
-				 /* "pagingGroup" id= "page_${p}" */
-
-				/* #('.number').css("color","black"); */
 
 			},
 			'error' : function() {
@@ -439,7 +434,7 @@ function numberWithCommas(x) {
 											onblur="this.placeholder = 'Search Keyword'">
 										<div class="input-group-append">
 											<button class="btn filteringSearchBtn" type="button">
-												<i class="ti-search"></i>
+												<i class="fa fa-search"></i>
 											</button>
 										</div>
 									</div>

@@ -20,7 +20,6 @@
 	src="${ pageContext.request.contextPath }/resources/js/vendor/jquery-1.12.4.min.js"></script>
 
 <script>
-
 	window.onload = function() {
 		pieChartDraw();
 		pieChart2Draw();
@@ -147,7 +146,7 @@
 						</div>
 					</div>
 					<div class="descript_wrap white-bg" style="height: 1000px">
-						
+
 
 						<div class="single_wrap">
 							<c:set var="tempname" value="" />
@@ -178,18 +177,21 @@
 									test="${ (card.alwaysDiscount  * userConsumption.alwaysDiscount ) ne 0.0 }">
 									<li>언제나 할인 : <fmt:formatNumber
 											value="${userConsumption.alwaysDiscount  }" type="number" />원에서
-										<fmt:formatNumber
-											value="${ userConsumption.alwaysDiscount  * (1-card.alwaysDiscount )  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+										<strong> <fmt:formatNumber
+												value="${ userConsumption.alwaysDiscount  * (1-card.alwaysDiscount )  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.alwaysDiscount  * userConsumption.alwaysDiscount  }"
 											type="number" />원 혜택)
 									</li>
 								</c:if>
 								<c:if test="${ (card.cvs * userConsumption.cvs) ne 0.0 }">
 									<li>편의점 : <fmt:formatNumber
-											value="${userConsumption.cvs }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.cvs * (1-card.cvs)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.cvs }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.cvs * (1-card.cvs)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.cvs * userConsumption.cvs }" type="number" />원
 										혜택)
 									</li>
@@ -197,18 +199,22 @@
 								<c:if
 									test="${ (card.airMileage * userConsumption.airMileage) ne 0.0 }">
 									<li>항공(마일리지) : <fmt:formatNumber
-											value="${userConsumption.airMileage }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.airMileage * (1-card.airMileage)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.airMileage }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.airMileage * (1-card.airMileage)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.airMileage * userConsumption.airMileage }"
 											type="number" />원 혜택)
 									</li>
 								</c:if>
 								<c:if test="${ (card.beauty * userConsumption.beauty) ne 0.0 }">
 									<li>뷰티 : <fmt:formatNumber
-											value="${userConsumption.beauty }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.beauty * (1-card.beauty)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.beauty }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.beauty * (1-card.beauty)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.beauty * userConsumption.beauty }"
 											type="number" />원 혜택)
 									</li>
@@ -217,9 +223,10 @@
 									test="${ (card.communication * userConsumption.communication) ne 0.0 }">
 									<li>대중교통 : <fmt:formatNumber
 											value="${userConsumption.publicTransportation }"
-											type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.publicTransportation * (1-card.publicTransportation)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											type="number" />원에서 <strong> <fmt:formatNumber
+												value="${ userConsumption.publicTransportation * (1-card.publicTransportation)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.publicTransportation * userConsumption.publicTransportation }"
 											type="number" />원 혜택)
 									</li>
@@ -227,18 +234,22 @@
 								<c:if
 									test="${ (card.cafeBakery * userConsumption.cafeBakery) ne 0.0 }">
 									<li>카페/베이커리 : <fmt:formatNumber
-											value="${userConsumption.cafeBakery }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.cafeBakery * (1-card.cafeBakery)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.cafeBakery }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.cafeBakery * (1-card.cafeBakery)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.cafeBakery * userConsumption.cafeBakery }"
 											type="number" />원 혜택)
 									</li>
 								</c:if>
 								<c:if test="${ (card.movie * userConsumption.movie) ne 0.0 }">
 									<li>영화 : <fmt:formatNumber
-											value="${userConsumption.movie }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.movie * (1-card.movie)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.movie }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.movie * (1-card.movie)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.movie * userConsumption.movie }" type="number" />원
 										혜택)
 									</li>
@@ -246,9 +257,11 @@
 								<c:if
 									test="${ (card.hypermart * userConsumption.hypermart) ne 0.0 }">
 									<li>대형마트 : <fmt:formatNumber
-											value="${userConsumption.hypermart }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.hypermart * (1-card.hypermart)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.hypermart }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.hypermart * (1-card.hypermart)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.hypermart * userConsumption.hypermart }"
 											type="number" />원 혜택)
 									</li>
@@ -256,9 +269,11 @@
 								<c:if
 									test="${ (card.culture * userConsumption.culture) ne 0.0 }">
 									<li>문화 : <fmt:formatNumber
-											value="${userConsumption.culture }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.culture * (1-card.culture)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.culture }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.culture * (1-card.culture)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.culture * userConsumption.culture }"
 											type="number" />원 혜택)
 									</li>
@@ -266,9 +281,11 @@
 								<c:if
 									test="${ (card.education * userConsumption.education) ne 0.0 }">
 									<li>교육 : <fmt:formatNumber
-											value="${userConsumption.education }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.education * (1-card.education)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.education }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.education * (1-card.education)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.education * userConsumption.education }"
 											type="number" />원 혜택)
 									</li>
@@ -279,9 +296,10 @@
 									test="${ (card.annualFeeSupport * userConsumption.annualFeeSupport) ne 0.0 }">
 									<li>연회비지원 : <fmt:formatNumber
 											value="${userConsumption.annualFeeSupport }" type="number" />원에서
-										<fmt:formatNumber
-											value="${ userConsumption.annualFeeSupport * (1-card.annualFeeSupport)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+										<strong> <fmt:formatNumber
+												value="${ userConsumption.annualFeeSupport * (1-card.annualFeeSupport)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.annualFeeSupport * userConsumption.annualFeeSupport }"
 											type="number" />원 혜택)
 									</li>
@@ -290,27 +308,31 @@
 									test="${ (card.publicTransportation * userConsumption.publicTransportation) ne 0.0 }">
 									<li>대중교통 : <fmt:formatNumber
 											value="${userConsumption.publicTransportation }"
-											type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.publicTransportation * (1-card.publicTransportation)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											type="number" />원에서 <strong> <fmt:formatNumber
+												value="${ userConsumption.publicTransportation * (1-card.publicTransportation)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.publicTransportation * userConsumption.publicTransportation }"
 											type="number" />원 혜택)
 									</li>
 								</c:if>
 								<c:if test="${ (card.rental * userConsumption.rental) ne 0.0 }">
 									<li>렌탈 : <fmt:formatNumber
-											value="${userConsumption.rental }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.rental * (1-card.rental)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.rental }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.rental * (1-card.rental)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.rental * userConsumption.rental }"
 											type="number" />원 혜택)
 									</li>
 								</c:if>
 								<c:if test="${ (card.oil * userConsumption.oil) ne 0.0 }">
 									<li>주유 : <fmt:formatNumber value="${userConsumption.oil }"
-											type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.oil * (1-card.oil)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											type="number" />원에서 <strong> <fmt:formatNumber
+												value="${ userConsumption.oil * (1-card.oil)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.oil * userConsumption.oil }" type="number" />원
 										혜택)
 									</li>
@@ -318,9 +340,11 @@
 								<c:if
 									test="${ (card.shopping * userConsumption.shopping) ne 0.0 }">
 									<li>쇼핑 : <fmt:formatNumber
-											value="${userConsumption.shopping }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.shopping * (1-card.shopping)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.shopping }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.shopping * (1-card.shopping)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.shopping * userConsumption.shopping }"
 											type="number" />원 혜택)
 									</li>
@@ -328,9 +352,11 @@
 								<c:if
 									test="${ (card.leisure * userConsumption.leisure) ne 0.0 }">
 									<li>레저 : <fmt:formatNumber
-											value="${userConsumption.leisure }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.leisure * (1-card.leisure)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.leisure }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.leisure * (1-card.leisure)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.leisure * userConsumption.leisure }"
 											type="number" />원 혜택)
 									</li>
@@ -339,9 +365,10 @@
 									test="${ (card.nationalVoucher * userConsumption.nationalVoucher) ne 0.0 }">
 									<li>국민행복카드 : <fmt:formatNumber
 											value="${userConsumption.nationalVoucher }" type="number" />원에서
-										<fmt:formatNumber
-											value="${ userConsumption.nationalVoucher * (1-card.nationalVoucher)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+										<strong> <fmt:formatNumber
+												value="${ userConsumption.nationalVoucher * (1-card.nationalVoucher)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.nationalVoucher * userConsumption.nationalVoucher }"
 											type="number" />원 혜택)
 									</li>
@@ -349,9 +376,11 @@
 								<c:if
 									test="${ (card.medical * userConsumption.medical) ne 0.0 }">
 									<li>의료 : <fmt:formatNumber
-											value="${userConsumption.medical }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.medical * (1-card.medical)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.medical }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.medical * (1-card.medical)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.medical * userConsumption.medical }"
 											type="number" />원 혜택)
 									</li>
@@ -360,9 +389,10 @@
 									test="${ (card.pointCashback * userConsumption.pointCashback) ne 0.0 }">
 									<li>포인트/캐시백 : <fmt:formatNumber
 											value="${userConsumption.pointCashback }" type="number" />원에서
-										<fmt:formatNumber
-											value="${ userConsumption.pointCashback * (1-card.pointCashback)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+										<strong> <fmt:formatNumber
+												value="${ userConsumption.pointCashback * (1-card.pointCashback)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.pointCashback * userConsumption.pointCashback }"
 											type="number" />원 혜택)
 									</li>
@@ -371,9 +401,10 @@
 									test="${ (card.automobiles * userConsumption.automobiles) ne 0.0 }">
 									<li>오토 : <fmt:formatNumber
 											value="${userConsumption.automobiles }" type="number" />원에서
-										<fmt:formatNumber
-											value="${ userConsumption.automobiles * (1-card.automobiles)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+										<strong> <fmt:formatNumber
+												value="${ userConsumption.automobiles * (1-card.automobiles)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.automobiles * userConsumption.automobiles }"
 											type="number" />원 혜택)
 									</li>
@@ -381,18 +412,22 @@
 								<c:if
 									test="${ (card.finance * userConsumption.finance) ne 0.0 }">
 									<li>금융 : <fmt:formatNumber
-											value="${userConsumption.finance }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.finance * (1-card.finance)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.finance }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.finance * (1-card.finance)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.finance * userConsumption.finance }"
 											type="number" />원 혜택)
 									</li>
 								</c:if>
 								<c:if test="${ (card.eatOut * userConsumption.eatOut) ne 0.0 }">
 									<li>외식 : <fmt:formatNumber
-											value="${userConsumption.eatOut }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.eatOut * (1-card.eatOut)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.eatOut }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.eatOut * (1-card.eatOut)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.eatOut * userConsumption.eatOut }"
 											type="number" />원 혜택)
 									</li>
@@ -400,9 +435,11 @@
 								<c:if
 									test="${ (card.easyPay * userConsumption.easyPay) ne 0.0 }">
 									<li>간편결제 : <fmt:formatNumber
-											value="${userConsumption.easyPay }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.easyPay * (1-card.easyPay)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.easyPay }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.easyPay * (1-card.easyPay)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.easyPay * userConsumption.easyPay }"
 											type="number" />원 혜택)
 									</li>
@@ -411,9 +448,10 @@
 									test="${ (card.maintenance * userConsumption.maintenance) ne 0.0 }">
 									<li>관리비 : <fmt:formatNumber
 											value="${userConsumption.maintenance }" type="number" />원에서
-										<fmt:formatNumber
-											value="${ userConsumption.maintenance * (1-card.maintenance)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+										<strong> <fmt:formatNumber
+												value="${ userConsumption.maintenance * (1-card.maintenance)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.maintenance * userConsumption.maintenance }"
 											type="number" />원 혜택)
 									</li>
@@ -421,9 +459,11 @@
 								<c:if
 									test="${ (card.premium * userConsumption.premium) ne 0.0 }">
 									<li>프리미엄 : <fmt:formatNumber
-											value="${userConsumption.premium }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.premium * (1-card.premium)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.premium }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.premium * (1-card.premium)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.premium * userConsumption.premium }"
 											type="number" />원 혜택)
 									</li>
@@ -432,9 +472,10 @@
 									test="${ (card.priorityPass * userConsumption.priorityPass) ne 0.0 }">
 									<li>Priority Pass : <fmt:formatNumber
 											value="${userConsumption.priorityPass }" type="number" />원에서
-										<fmt:formatNumber
-											value="${ userConsumption.priorityPass * (1-card.priorityPass)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+										<strong> <fmt:formatNumber
+												value="${ userConsumption.priorityPass * (1-card.priorityPass)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.priorityPass * userConsumption.priorityPass }"
 											type="number" />원 혜택)
 									</li>
@@ -442,9 +483,11 @@
 								<c:if
 									test="${ (card.voucher * userConsumption.voucher) ne 0.0 }">
 									<li>바우처 : <fmt:formatNumber
-											value="${userConsumption.voucher }" type="number" />원에서 <fmt:formatNumber
-											value="${ userConsumption.voucher * (1-card.voucher)  }"
-											type="number" />원으로 절감 (<fmt:formatNumber
+											value="${userConsumption.voucher }" type="number" />원에서 <strong>
+											<fmt:formatNumber
+												value="${ userConsumption.voucher * (1-card.voucher)  }"
+												type="number" />원
+									</strong>으로 절감 (<fmt:formatNumber
 											value="${ card.voucher * userConsumption.voucher }"
 											type="number" />원 혜택)
 									</li>

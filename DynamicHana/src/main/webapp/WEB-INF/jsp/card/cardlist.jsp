@@ -370,7 +370,7 @@
 																<div class="links_locat d-flex align-items-center">
 																	<div class="location">
 																		<p>
-																			<i class="fa fa-map-marker"></i>
+																			<i class="fa fa-credit-card"></i>
 																			<c:choose>
 																				<c:when test="${ cardList.cardType eq 'CREDIT' }">신용카드</c:when>
 																				<c:when test="${ cardList.cardType eq 'CHECK' }">체크카드</c:when>
@@ -379,7 +379,7 @@
 																	</div>
 																	<div class="location">
 																		<p>
-																			<i class="fa fa-clock-o"></i> 연회비
+																			<i class="fa fa-check"></i> 연회비
 																			<c:out value="${ cardList.annualFee }" />
 																			원
 																		</p>
@@ -470,118 +470,7 @@
 							+ $("#slider-range").slider("values", 1) + "원");
 		});
 
-		/* 여기서부터 시작 */
 
-		/* temp = [ '#CAFE_BAKERY_slider-range', '#FINANCE_slider-range' ]
-		amount_temp = [ '#CAFE_BAKERY_amount', '#FINANCE_amount' ] */
-
-		/* $(function() {
-			$(temp[0]).slider(
-					{
-						range : true,
-						min : 0,
-						step : 1000,
-						max : 24600,
-						values : [ 750, 24600 ],
-						slide : function(event, ui) {
-							$(amount_temp[0]).val(
-									"$" + ui.values[0] + " - $" + ui.values[1]
-											+ "/ Year");
-						}
-					});
-
-			$(amount_temp[0])
-					.val(
-							"$" + $(temp[0]).slider("values", 0)
-									+ " - $"
-									+ $(temp[0]).slider("values", 1)
-									+ "/ Year");
-		});
-		 */
-		/* 	for (var i = 0; i < temp.length; i++) {
-
-				eval('$(function(){$(temp['
-						+ i
-						+ ']).slider({range:true,min:0,step:1000,max:24600,values:[750,24600],slide:function(event,ui){$(amount_temp['
-						+ i
-						+ ']).val("$"+ui.values[0]+" - $"+ui.values[1]+"/ Year")}});$(amount_temp['
-						+ i + ']).val("$"+$(temp[' + i
-						+ ']).slider("values",0)+" - $"+$(temp[' + i
-						+ ']).slider("values",1)+"/ Year")});')
-			} */
-
-		/* $(function() {
-			$(temp[1]).slider(
-					{
-						range : true,
-						min : 0,
-						step : 1000,
-						max : 24600,
-						values : [ 750, 24600 ],
-						slide : function(event, ui) {
-							$(amount_temp[1]).val(
-									"$" + ui.values[0] + " - $" + ui.values[1]
-											+ "/ Year");
-						}
-					});
-
-			$(amount_temp[1])
-					.val(
-							"$" + $(temp[1]).slider("values", 0)
-									+ " - $"
-									+ $(temp[1]).slider("values", 1)
-									+ "/ Year");
-		}); 
-		 */
-	</script>
-
-	<script>
-		/* 	let benefitList = [];
-
-		 $("input[class=form-check-input]").each(function(idx) {
-
-		 var value = $(this).val();
-		 benefitList.push(value);
-
-		 }) */
-
-		/* let benefitList = [ "CAFE_BAKERY", "FINANCE" ];
-
-		sliderVarList = []
-		amountVarList = []
-
-		for (var i = 0; i < benefitList.length; i++) {
-			sliderVarList.push("#" + benefitList[i] + "_slider_range")
-			amountVarList.push("#" + benefitList[i] + "_amount")
-		}
-
-		console.log(sliderVarList)
-		console.log(amountVarList)
-
-		for (var i = 0; i < sliderVarList.length; i++) {
-
-			$(function() {
-				$(sliderVarList[i]).slider(
-						{
-							range : true,
-							min : 0,
-							step : 1000,
-							max : 24600,
-							values : [ 750, 24600 ],
-							slide : function(event, ui) {
-								$(amountVarList[i]).val(
-										"$" + ui.values[0] + " - $"
-												+ ui.values[1] + "/ Year");
-							}
-						});
-
-				$(amountVarList[i]).val(
-						"$" + $(sliderVarList[i]).slider("values", 0) + " - $"
-								+ $(sliderVarList[i]).slider("values", 1)
-								+ "/ Year");
-			});
-
-		} */
 	</script>
 
 

@@ -365,7 +365,7 @@
 							건
 						</h2>
 						<div class="icon">
-							<i class="zmdi zmdi-calendar-notezmdi zmdi-shopping-cart"></i>
+							<i class="zmdi zmdi-calendar-note"></i>
 						</div>
 					</div>
 				</div>

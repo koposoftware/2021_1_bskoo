@@ -283,9 +283,8 @@
 
 										</div>
 										<div class="col-auto">
-											<div
-												class="icon icon-shape bg-warning text-white rounded-circle shadow">
-												<i class="fas fa-chart-pie"></i>
+											<div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+												<i class="fas fa-chart-bar"></i>
 											</div>
 										</div>
 									</div>
@@ -450,7 +449,7 @@
 
 											<c:choose>
 												<c:when
-													test="${ topTenCard.thisMonth+0 > topTenCard.lastMonth+0}">
+													test="${ topTenCard.thisMonth+0 >= topTenCard.lastMonth+0}">
 													<td class="text-center"><i
 														class="fas fa-arrow-up text-success mr-3"></i> <c:out
 															value="${ topTenCard.ratio }" /> %</td>

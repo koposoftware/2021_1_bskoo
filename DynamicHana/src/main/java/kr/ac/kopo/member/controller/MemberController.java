@@ -36,7 +36,6 @@ public class MemberController {
 
 		memberService.register(member);
 
-		System.out.println(member);
 		return "redirect:/";
 
 	}

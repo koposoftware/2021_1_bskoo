@@ -3,12 +3,15 @@
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context   
     http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd">
 
 	<context:component-scan
 		base-package="kr.ac.kopo" />
@@ -48,6 +51,26 @@
 		<mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp" />
 	</mvc:view-resolvers>
 
-	
+	<!-- 스케쥴러파일이 존재하는 패키지 설정 -->
+	<context:component-scan
+		base-package="kr.ac.kopo.batch" />
+	<!-- 해당 태그들은 크론탭을 설정에 필요한 태그들 -->
+	<task:scheduler id="jobScheduler" pool-size="10" />
+	<task:annotation-driven scheduler="jobScheduler" />
+
+	<bean class="kr.ac.kopo.interceptor.LoginInterceptor"
+		id="loginInterceptor" />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" /> <!-- 모든 uri은 인터셉터 처리 -->
+			<mvc:exclude-mapping path="/login" /> <!-- 제외할 uri -->
+			<mvc:exclude-mapping path="/register" /> <!-- 제외할 uri -->
+			<mvc:exclude-mapping path="/resources/**" />
+			<mvc:exclude-mapping path="/" />
+			<mvc:exclude-mapping path="/cardlist" />
+			<ref bean="loginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 
 </beans>

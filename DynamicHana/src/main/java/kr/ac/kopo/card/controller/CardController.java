@@ -83,7 +83,7 @@ public class CardController {
 
 		return mav;
 	}
-
+	
 	@GetMapping("/detail/{no}")
 	public ModelAndView detail(@PathVariable("no") int no, HttpSession session) throws Exception {
 		ModelAndView mav = new ModelAndView("card/detail");
@@ -101,12 +101,10 @@ public class CardController {
 		CardBenefitVO card = cardInfoList.get(0);
 		mav.addObject("card", card);
 
-		System.out.println(card);
 		
 		CardBenefitVO userConsumption = cardInfoList.get(1);
 		mav.addObject("userConsumption", userConsumption);
 
-		System.out.println();
 		
 		return mav;
 	}

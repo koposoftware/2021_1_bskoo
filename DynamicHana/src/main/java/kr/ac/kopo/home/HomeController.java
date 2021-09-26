@@ -12,12 +12,11 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public String home(HttpSession session) {
-		MemberVO userVO = new MemberVO();
-		userVO.setId("test");
-		userVO.setPw("test");
-		userVO.setName("구본성");
-		userVO.setMemberNo(1);
-		session.setAttribute("userVO", userVO);
+		/*
+		 * MemberVO userVO = new MemberVO(); userVO.setId("test"); userVO.setPw("test");
+		 * userVO.setName("구본성"); userVO.setMemberNo(1); session.setAttribute("userVO",
+		 * userVO);
+		 */
 		return "index";
 	}
 }
