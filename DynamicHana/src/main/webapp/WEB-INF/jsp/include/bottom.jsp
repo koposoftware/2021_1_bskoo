@@ -16,33 +16,20 @@
 						</a>
 					</div>
 					<p>
-						finloan@support.com <br> +10 873 672 6782 <br> 600/D,
-						Green road, NewYork
+						99bonseong@gmail.com <br> github.com/Bonseong <br>
 					</p>
-					<div class="socail_links">
-						<ul>
-							<li><a href="#"> <i class="ti-facebook"></i>
-							</a></li>
-							<li><a href="#"> <i class="fa fa-google-plus"></i>
-							</a></li>
-							<li><a href="#"> <i class="fa fa-twitter"></i>
-							</a></li>
-							<li><a href="#"> <i class="fa fa-instagram"></i>
-							</a></li>
-						</ul>
-					</div>
-
+				
 				</div>
 			</div>
 			<div class="col-xl-2 col-md-6 col-lg-2">
 				<div class="footer_widget wow fadeInUp" data-wow-duration="1.1s"
 					data-wow-delay=".4s">
-					<h3 class="footer_title">Company</h3>
+					<h3 class="footer_title">하나금융그룹</h3>
 					<ul>
-						<li><a href="#">About </a></li>
-						<li><a href="#"> Pricing</a></li>
-						<li><a href="#">Carrier Tips</a></li>
-						<li><a href="#">FAQ</a></li>
+						<li><a href="#">하나금융그룹 </a></li>
+						<li><a href="#">다이나믹하나</a></li>
+						<li><a href="#">하나금융티아이</a></li>
+						<li><a href="#">세진개발</a></li>
 					</ul>
 
 				</div>
@@ -50,47 +37,28 @@
 			<div class="col-xl-3 col-md-6 col-lg-3">
 				<div class="footer_widget wow fadeInUp" data-wow-duration="1.2s"
 					data-wow-delay=".5s">
-					<h3 class="footer_title">Category</h3>
+					<h3 class="footer_title">다이나믹하나</h3>
 					<ul>
-						<li><a href="#">Design & Art</a></li>
-						<li><a href="#">Engineering</a></li>
-						<li><a href="#">Sales & Marketing</a></li>
-						<li><a href="#">Finance</a></li>
+						<li><a href="#">나만의 카드</a></li>
+						<li><a href="#">실시간 카드 내역서</a></li>
+						<li><a href="#">월간 거래 릴포트</a></li>
+						<li><a href="#">고객센터</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-xl-4 col-md-6 col-lg-4">
 				<div class="footer_widget wow fadeInUp" data-wow-duration="1.3s"
 					data-wow-delay=".6s">
-					<h3 class="footer_title">Subscribe</h3>
+					<h3 class="footer_title">문의하기</h3>
 					<form action="#" class="newsletter_form">
 						<input type="text" placeholder="Enter your mail">
-						<button type="submit">Subscribe</button>
+						<button type="submit">문의하기</button>
 					</form>
-					<p class="newsletter_text">Esteem spirit temper too say adieus
-						who direct esteem esteems luckily.</p>
+					<p class="newsletter_text">이메일 주소를 적어주세요.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s"
-	data-wow-delay=".3s">
-	<div class="container">
-		<div class="footer_border"></div>
-		<div class="row">
-			<div class="col-xl-12">
-				<p class="copy_right text-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;
-					<script>document.write(new Date().getFullYear());</script>
-					All rights reserved | This template is made with <i
-						class="fa fa-heart-o" aria-hidden="true"></i> by <a
-						href="https://colorlib.com" target="_blank">Colorlib</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
+
 </footer>
