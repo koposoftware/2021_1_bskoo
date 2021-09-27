@@ -12,12 +12,16 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Job Board</title>
+<title>하나카드 다이나믹하나</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script
-	src="${ pageContext.request.contextPath }/resources/js/vendor/jquery-1.12.4.min.js"></script>
+	src="${ pageContext.request.contextPath }/resources/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script
+	src="${ pageContext.request.contextPath }/resources/js/Chart.PieceLabel.min.js"></script>
+
 
 <script>
 	window.onload = function() {
@@ -43,8 +47,10 @@
 			options : {
 				responsive : false,
 				pieceLabel : {
-					mode : "label",
-					fontSize : 11,
+					mode : "percentage",
+					position : "default",
+					fontSize : 12,
+					fontColor : 'rgb(2,2,2)',
 					fontStyle : 'bold'
 				}
 			}
@@ -72,8 +78,10 @@
 			options : {
 				responsive : false,
 				pieceLabel : {
-					mode : "label",
-					fontSize : 11,
+					mode : "percentage",
+					position : "default",
+					fontSize : 12,
+					fontColor : 'rgb(2,2,2)',
 					fontStyle : 'bold'
 				}
 

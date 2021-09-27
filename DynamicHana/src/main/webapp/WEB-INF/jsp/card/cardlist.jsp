@@ -11,9 +11,10 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Job Board</title>
+<title>하나카드 다이나믹하나</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet"
 	href="${ pageContext.request.contextPath }/resources/css/custom/modal.css">

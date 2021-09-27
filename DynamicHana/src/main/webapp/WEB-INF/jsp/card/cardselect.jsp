@@ -13,7 +13,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<title>하나카드 다이나믹하나</title>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">

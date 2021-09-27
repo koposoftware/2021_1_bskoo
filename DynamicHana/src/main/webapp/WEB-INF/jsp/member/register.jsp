@@ -213,6 +213,7 @@ function phoneCertificationCheck(){
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
+<title>하나카드 다이나믹하나</title>
 <body>
 
 	<header>

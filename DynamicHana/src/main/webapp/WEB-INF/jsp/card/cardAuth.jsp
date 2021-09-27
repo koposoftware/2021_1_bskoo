@@ -18,6 +18,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하나카드 다이나믹하나</title>
 <script>
 	$(document).ready(function() {
 
