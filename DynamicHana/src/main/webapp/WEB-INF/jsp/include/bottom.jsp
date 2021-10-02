@@ -41,7 +41,7 @@
 					<ul>
 						<li><a href="#">나만의 카드</a></li>
 						<li><a href="#">실시간 카드 내역서</a></li>
-						<li><a href="#">월간 거래 릴포트</a></li>
+						<li><a href="#">월간 거래 리포트</a></li>
 						<li><a href="#">고객센터</a></li>
 					</ul>
 				</div>

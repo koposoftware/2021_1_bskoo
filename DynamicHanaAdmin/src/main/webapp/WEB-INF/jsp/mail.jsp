@@ -196,7 +196,7 @@
 				data : JSON.stringify(param),
 				url : '${pageContext.request.contextPath}/mail/memberCount',
 				success : function(result) {
-					$('#memberCountSpan').text("발송 예정 인원 : " + result + "명")
+					$('#memberCountSpan').text("발송 예정 인원 : " + result + "6 명")
 					mailTarget = result
 					console.log("석세스")
 				},
@@ -274,7 +274,8 @@
 									<hr class="my-4" />
 
 									<div class="h5 mt-4">
-										<i class="ni business_briefcase-24 mr-2"></i>추천 카드
+										<i class="ni business_
+										briefcase-24 mr-2"></i>추천 카드
 									</div>
 									<div id="recoCardDiv">
 
@@ -440,6 +441,8 @@
 										<div class="form-group">
 											<span><label>내용 작성</label></span> <span style="float: right">
 
+												<button type="button" class="btn btn-sm btn-primary"
+													onclick="helloAuto()">인사말 작성</button>
 												<button type="button" class="btn btn-sm btn-primary"
 													onclick="contentAuto()">내용 자동 작성</button>
 												<button type="button" class="btn btn-sm btn-primary"

@@ -47,10 +47,9 @@
 						})
 
 						for (var i = 0; i < temp.length; i++) {
-
 							eval('$(function(){$(temp['
 									+ i
-									+ ']).slider({range:true,min:0,step:1,max:50,values:[0,50],slide:function(event,ui){$(amount_temp['
+									+ ']).slider({range:true,min:0,step:1,max:20,values:[0,20],slide:function(event,ui){$(amount_temp['
 									+ i
 									+ ']).val(ui.values[0]+" % - "+ui.values[1]+" %")}});$(amount_temp['
 									+ i + ']).val($(temp[' + i

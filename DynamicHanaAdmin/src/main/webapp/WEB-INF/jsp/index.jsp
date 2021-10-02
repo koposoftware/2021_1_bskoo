@@ -72,20 +72,13 @@
 						},
 						tooltips : {
 							callbacks : {
-								label : function(item, data) {
-									var label = data.datasets[item.datasetIndex].label
-											|| '';
-									var yLabel = item.yLabel;
-									var content = '';
+								label : function(tooltipItem, data) {
 
-									if (data.datasets.length > 1) {
-										content += '<span class="popover-body-label mr-auto">'
-												+ label + '</span>';
-									}
+									var data = data_1[tooltipItem.index]
+									data = data.toString().replace(
+											/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
 
-									content += '<span class="popover-body-value">'
-											+ yLabel + '원</span>';
-									return content;
+									return data + " 원";
 								}
 							}
 						}
@@ -343,8 +336,8 @@
 
 
 											<span class="text-success mr-2"><i
-												class="fa fa-arrow-up"></i> <c:out
-													value="${ totalCluster.cnt+0 - totalCluster.compareValue+0  }" />
+												class="fa fa-arrow-up"></i> <%-- <c:out
+													value="${ totalCluster.cnt+0 - totalCluster.compareValue+0  }" /> --%>1
 												개</span>
 											<span class="text-nowrap">지난달 대비 </span>
 										</c:if>

@@ -68,6 +68,9 @@ public class CardController {
 		List<BenefitVO> benefitList = cardService.selectBenefitList();
 		mav.addObject("benefitList", benefitList);
 
+		
+		
+		
 		return cardFilterList;
 	}
 
@@ -77,10 +80,14 @@ public class CardController {
 		ModelAndView mav = new ModelAndView("card/filterList");
 
 		List<CardBenefitVO> cardFilterList = cardService.selectByFilter(paramMap);
+		
 		mav.addObject("cardFilterList", cardFilterList);
 		List<BenefitVO> benefitList = cardService.selectBenefitList();
 		mav.addObject("benefitList", benefitList);
 
+		
+		
+		
 		return mav;
 	}
 	
@@ -104,7 +111,7 @@ public class CardController {
 		
 		CardBenefitVO userConsumption = cardInfoList.get(1);
 		mav.addObject("userConsumption", userConsumption);
-
+		
 		
 		return mav;
 	}

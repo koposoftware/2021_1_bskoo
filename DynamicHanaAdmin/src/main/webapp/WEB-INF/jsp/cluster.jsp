@@ -219,7 +219,9 @@
 				<div class="col">
 					<div class="card shadow">
 						<div class="card-header border-0">
-							<h3 class="mb-0">회원 소비특성별 군집</h3>
+							<h2 class="mb-0">회원 소비특성별 군집</h2>
+							<h5>총 회원 4,962명 중 2,869명이 군집에 소속되어 있습니다. (57.9%)<br>지난달 대비 1개의 군집이 증가했습니다. (지난달 5개)<br>군집화의 대상은 한달 기준 5건의 이상의 거래를 포함한 회원입니다.</h5>
+							
 						</div>
 						<div class="table-responsive">
 							<table class="table align-items-center table-flush">

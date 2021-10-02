@@ -63,8 +63,8 @@ function numberWithCommas(x) {
 			labels: label_1,
 			datasets: [{
 				labels: '카테고리 당 소비금액',
-				backgroundColor: 'rgb(207, 255, 229)',
-				borderColor: 'rgb(207, 255, 229)',
+				backgroundColor: 'rgb(0, 165, 255)',
+				borderColor: 'rgb(0, 165, 255)',
 				data: data_1,
 				borderWidth: 1
 			}]
@@ -160,7 +160,7 @@ function numberWithCommas(x) {
 				labels: '주차별 소비금액',
 				lineTension: 0,
 				fill:false,
-				borderColor: 'rgb(207, 255, 229)',
+				borderColor: 'rgb(0, 165, 255)',
 				data: data_2,
 				borderWidth: 2
 			}]

@@ -32,6 +32,7 @@ public class CardDAOImpl implements CardDAO {
 	}
 
 	public List<CardBenefitVO> selectByFilter(Map<String, String> paramMap) {
+		System.out.println(paramMap);
 		List<CardBenefitVO> cardList = sqlSessionTemplate.selectList("card.CardDAO.selectByFilter", paramMap);
 		return cardList;
 	}

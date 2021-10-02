@@ -54,6 +54,8 @@
 	<!-- slider_area_end -->
 	<div class="mg-top-30"></div>
 	<div class="mg-top-30"></div>
+	<div class="mg-top-30"></div>
+	<div class="mg-top-30"></div>
 
 	<footer>
 		<jsp:include page="./include/bottom.jsp" />

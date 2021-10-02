@@ -321,6 +321,18 @@
 							fontFamily : "Poppins"
 						}
 					} ]
+				},
+				tooltips : {
+					callbacks : {
+						label : function(tooltipItem, data) {
+
+							var data = data_3[tooltipItem.index]
+							data = data.toString().replace(
+									/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+
+							return data + " 원";
+						}
+					}
 				}
 			}
 		})

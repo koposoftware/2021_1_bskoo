@@ -131,6 +131,7 @@
 
 	<select id="selectTransactionHistory" resultType="List"
 		parameterType="historyVO" resultMap="historyMap">
+
 		SELECT HISTORY_DATE, CATEGORY,
 		AMOUNT,
 		STORE, CARD_NAME, CARD_NO,
@@ -156,9 +157,6 @@
 		<if test="category != null and !category.equals('')">
 			AND CATEGORY=trim(#{category})
 		</if>
-
-
-
 
 		<!-- <if test="category == null"> WHERE </if> -->
 
@@ -217,7 +215,7 @@
 		SELECT TO_CHAR(HISTORY_DATE, 'YYYY"년" MM"월" DD"일" (DY)' ) AS HISTORY_DATE,
 		STORE, AMOUNT
 		FROM TRANSACTION_HISTORY WHERE CARD_NO=#{cardNo} AND
-		HISTORY_DATE BETWEEN SYSDATE-90 AND SYSDATE ORDER BY AMOUNT) WHERE
+		HISTORY_DATE BETWEEN SYSDATE-90 AND SYSDATE ORDER BY AMOUNT DESC) WHERE
 		ROWNUM<=5
 		]]>
 
@@ -337,59 +335,54 @@
 
 		<include refid="selectBenefit" />
 
-		<if test="cardName != null and !cardName.equals('')">
-			AND C.CARD_NAME like '%'||#{cardName}||'%'
-		</if>
+		<if test="cardName != null and !cardName.equals('')"> AND C.CARD_NAME
+			like '%'||#{cardName}||'%' </if>
 		<if test="cardType != null and !cardType.equals('')">
 			AND C.CARD_TYPE = #{cardType}
 		</if>
-
 		<if
-			test="annualFeeRange_min != null and !annualFeeRange_min.equals('')">
-			AND C.ANNUAL_FEE BETWEEN #{annualFeeRange_min} AND
+			test="annualFeeRange_min != null 
+			and !annualFeeRange_min.equals('')"> AND C.ANNUAL_FEE BETWEEN #{annualFeeRange_min}
+			AND
 			#{annualFeeRange_max}
 		</if>
-
 		<if
-			test="annualFeeRange_min != null and !annualFeeRange_min.equals('')">
-			AND C.ANNUAL_FEE BETWEEN #{annualFeeRange_min} AND
+			test="annualFeeRange_min != null and 
+			!annualFeeRange_min.equals('')"> AND C.ANNUAL_FEE BETWEEN #{annualFeeRange_min}
+			AND
 			#{annualFeeRange_max}
 		</if>
-		<if test="MOVIE_min!=null">
-			AND B.MOVIE BETWEEN #{MOVIE_min} AND #{MOVIE_max}
+		<if test="MOVIE_min!=null"> AND B.MOVIE BETWEEN
+			#{MOVIE_min} AND #{MOVIE_max}
 		</if>
-		<if test="SHOPPING_min!=null">
-			AND B.SHOPPING BETWEEN #{SHOPPING_min} AND #{SHOPPING_max}
+		<if test="SHOPPING_min!=null"> AND B.SHOPPING
+			BETWEEN #{SHOPPING_min} AND #{SHOPPING_max}
 		</if>
 		<if test="COMMUNICATION_min!=null">
 			AND B.COMMUNICATION BETWEEN #{COMMUNICATION_min} AND
 			#{COMMUNICATION_max}
 		</if>
-
-		<if test="EDUCATION_min!=ull">
-			AND B.EDUCATION BETWEEN #{EDUCATION_min} AND
+		<if test="EDUCATION_min!=ull"> AND B.EDUCATION BETWEEN #{EDUCATION_min}
+			AND
 			#{EDUCATION_max}
 		</if>
-		<if test="HYPERMART_min!=null">
-			AND B.HYPERMART BETWEEN #{HYPERMART_min} AND
-			#{HYPERMART_max}
+		<if test="HYPERMART_min!=null"> <![CDATA[ AND 
+			B.HYPERMART BETWEEN #{HYPERMART_min} AND #{HYPERMART_max} ]]>
 		</if>
 		<if test="MAINTENANCE_min!=null">
 			AND B.MAINTENANCE BETWEEN #{MAINTENANCE_min} AND
 			#{MAINTENANCE_max}
 		</if>
-
-		<if test="AUTOMOBILES_min!=null">
-			AND B.AUTOMOBILES BETWEEN #{AUTOMOBILES_min} AND
+		<if test="AUTOMOBILES_min!=null"> AND B.AUTOMOBILES BETWEEN #{AUTOMOBILES_min}
+			AND
 			#{AUTOMOBILES_max}
 		</if>
-		<if test="MEDICAL_min!=null">
-			AND B.MEDICAL BETWEEN #{MEDICAL_min} AND #{MEDICAL_max}
+		<if test="MEDICAL_min!=null"> AND B.MEDICAL
+			BETWEEN #{MEDICAL_min} AND #{MEDICAL_max}
 		</if>
 		<if test="CULTURE_min!=null">
 			AND B.CULTURE BETWEEN #{CULTURE_min} AND #{CULTURE_max}
 		</if>
-
 		<if test="FINANCE_min!=null">
 			AND B.FINANCE BETWEEN #{FINANCE_min} AND #{FINANCE_max}
 		</if>
@@ -397,12 +390,13 @@
 			AND B.AIR_MILEAGE BETWEEN #{AIR_MILEAGE_min} AND
 			#{AIR_MILEAGE_max}
 		</if>
-		<if test="CAFE_BAKERY_min!=null">
-			AND B.CAFE_BAKERY BETWEEN #{CAFE_BAKERY_min} AND
+		<if test="CAFE_BAKERY_min!=null"> AND B.CAFE_BAKERY BETWEEN #{CAFE_BAKERY_min}
+			AND
 			#{CAFE_BAKERY_max}
 		</if>
-		<if test="ALWAYS_DISCOUNT_min!=null">
-			AND B.ALWAYS_DISCOUNT BETWEEN #{ALWAYS_DISCOUNT_min} AND
+
+		<if test="ALWAYS_DISCOUNT_min!=null"> AND B.ALWAYS_DISCOUNT
+			BETWEEN #{ALWAYS_DISCOUNT_min} AND
 			#{ALWAYS_DISCOUNT_max}
 		</if>
 		<if test="VOUCHER_min!=null">
@@ -412,18 +406,14 @@
 			AND B.PRIORITY_PASS BETWEEN #{PRIORITY_PASS_min} AND
 			#{PRIORITY_PASS_max}
 		</if>
-		<if test="OIL_min!=null">
-			AND B.OIL BETWEEN #{OIL_min} AND #{OIL_max}
+		<if test="OIL_min!=null"> AND B.OIL BETWEEN #{OIL_min} AND #{OIL_max}
 		</if>
-		<if test="PUBLIC_TRANSPORTATION_min!=null">
-			AND B.PUBLIC_TRANSPORTATION BETWEEN
-			#{PUBLIC_TRANSPORTATION_min} AND
-			#{PUBLIC_TRANSPORTATION_max}
+		<if test="PUBLIC_TRANSPORTATION_min!=null"> AND B.PUBLIC_TRANSPORTATION
+			BETWEEN
+			#{PUBLIC_TRANSPORTATION_min} AND #{PUBLIC_TRANSPORTATION_max}
 		</if>
-		<if test="ANNUAL_FEE_SUPPORT_min!=null">
-			AND B.ANNUAL_FEE_SUPPORT BETWEEN #{ANNUAL_FEE_SUPPORT_min}
-			AND
-			#{ANNUAL_FEE_SUPPORT_max}
+		<if test="ANNUAL_FEE_SUPPORT_min!=null"> AND B.ANNUAL_FEE_SUPPORT BETWEEN
+			#{ANNUAL_FEE_SUPPORT_min} AND #{ANNUAL_FEE_SUPPORT_max}
 		</if>
 		<if test="EAT_OUT_min!=null">
 			AND B.EAT_OUT BETWEEN #{EAT_OUT_min} AND #{EAT_OUT_max}
@@ -435,32 +425,35 @@
 			AND B.POINT_CASHBACK BETWEEN #{POINT_CASHBACK_min} AND
 			#{POINT_CASHBACK_max}
 		</if>
-		<if test="EASY_PAY_min!=null">
-			AND B.EASY_PAY BETWEEN #{EASY_PAY_min} AND #{EASY_PAY_max}
+		<if test="EASY_PAY_min!=null"> AND B.EASY_PAY BETWEEN #{EASY_PAY_min}
+			AND #{EASY_PAY_max}
 		</if>
-
-		<if test="BEAUTY_min!=null">
-			AND B.BEAUTY BETWEEN #{BEAUTY_min} AND #{BEAUTY_max}
+		<if test="BEAUTY_min!=null"> AND B.BEAUTY BETWEEN
+			#{BEAUTY_min} AND #{BEAUTY_max}
 		</if>
 		<if test="NATIONAL_VOUCHER_min!=null">
 			AND B.NATIONAL_VOUCHER BETWEEN #{NATIONAL_VOUCHER_min} AND
 			#{NATIONAL_VOUCHER_max}
 		</if>
-		<if test="CVS_min!=null">
-			AND B.CVS BETWEEN #{CVS_min} AND #{CVS_max}
+		<if test="CVS_min!=null"> AND B.CVS BETWEEN #{CVS_min} AND #{CVS_max}
 		</if>
-		<if test="RENTAL_min!=null">
-			AND B.RENTAL BETWEEN #{RENTAL_min} AND #{RENTAL_max}
+		<if test="RENTAL_min!=null"> AND B.RENTAL BETWEEN #{RENTAL_min} AND
+			#{RENTAL_max}
 		</if>
+
+
+		ORDER BY CARD_CODE
 
 
 	</select>
 
 
 
-	<!-- <insert id="register" parameterType="memberVO"> INSERT INTO T_MEMBER(ID, 
-		PW, NAME, MOBILE_NO, RRN, BIRTHDAY, AGE, GENDER, ISNATIVE, ADDRESS, ADDRESS_DETAIL) 
-		VALUES (#{id}, #{pw}, #{name}, #{mobileNo}, #{rrn}, TO_DATE(#{birthday}), 
-		#{age}, #{gender}, #{isNative}, #{address}, #{addressDetail}) </insert> -->
+	<insert id="register" parameterType="memberVO"> INSERT INTO T_MEMBER(ID,
+		PW, NAME, MOBILE_NO, RRN, BIRTHDAY, AGE, GENDER, ISNATIVE, ADDRESS,
+		ADDRESS_DETAIL)
+		VALUES (#{id}, #{pw}, #{name}, #{mobileNo}, #{rrn}, TO_DATE(#{birthday}),
+		#{age}, #{gender}, #{isNative}, #{address}, #{addressDetail})
+	</insert>
 
 </mapper>

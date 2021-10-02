@@ -71,7 +71,7 @@ public class CardServiceImpl implements CardService {
 			}
 
 		}
-
+		System.out.println(map);
 		List<CardBenefitVO> cardList = cardDAO.selectByFilter(map);
 		return cardList;
 	}
