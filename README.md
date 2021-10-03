@@ -1,6 +1,6 @@
 # 다이나믹하나 : 대시보드를 활용한 다아니믹 카드명세서
 
-프로젝트 홈페이지 - https://koposoftware.github.io/2021_01_bskoo/
+프로젝트 홈페이지 - https://koposoftware.github.io/2021_1_bskoo/
 
 # 1. 프로젝트 개요
 
@@ -30,10 +30,10 @@
 
 본인 소개를 추가하세요
 
-|이름 |고길동|![gdKO](/gdko.jpg)|
+|이름 |구본성|![gdKO](/gdko.jpg)|
 |연락처 | gdko(@)kopo.ac.kr|
 |skill set| Frontend - HTML, CSS, Javascript|
-| | Backend - Java, Spring, Oracle|
+| | Backend - Java, Spring, Python, R, Oracle|
 |자격증|  |
 |수상| |
 |특기사항|  TOEIC 990 |
