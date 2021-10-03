@@ -36,7 +36,7 @@
 |:-----|:--|
 |연락처|99bonseong@gmail.com|
 |Frontend|HTML, CSS, JavaScript|
-|Backend|Java, Spring, Python, R|
+|Backend|Java, Python, R|
 |Etc|Tableau|
 |자격증|ADsP, SQLD, 사회조사분석사 2급,<br>정보처리기사, 빅데이터분석기사, ADP(필기)|
 |경력|유진아이티서비스 인턴 (2020. 02 ~ 2020. 05)|
