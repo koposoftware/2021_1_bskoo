@@ -30,7 +30,7 @@
 
 
 
-|이름|구본성|
+
 |:-----|:--|
 |연락처|99bonseong@gmail.com|
 |Frontend|HTML, CSS, JavaScript|
