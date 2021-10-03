@@ -12,14 +12,15 @@
 
 프로젝트 제안서를 설명하세요. 발표자료와 동영상을 추가하세요. 시스템의 아키텍쳐 설명도 추가하세요.
 
-   <img src="ppt.jpg"/>[발표자료](/project.pptx)<br>
+   <img src="cover.JPG"/>[발표자료](/project.pptx)<br>
    <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
  
 
 # 3. 프로젝트 결과
-<img src="cover.jpg"/>
-<img src="user_page.jpg"/>
-<img src="admin_page.jpg"/>
+<사용자 페이지>
+<img src="user_page.JPG"/>
+<관리자 페이지>
+<img src="admin_page.JPG"/>
 ## 발표 ppt 
    <img src="ppt.jpg"/>[발표자료](/project.pptx)<br>
 
