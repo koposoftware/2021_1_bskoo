@@ -29,7 +29,7 @@
 # 4. 본인 소개
 
 
-
+<img src="me.jpg"/>
 |이름|구본성|
 |:-----|:--|
 |연락처|99bonseong@gmail.com|
