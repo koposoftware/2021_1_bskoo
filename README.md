@@ -29,11 +29,14 @@
 # 4. 본인 소개
 
 본인 소개를 추가하세요
-|제목|내용|설명|
-|:---|---|---|
+|이름|구본성|
+|:---:|---|---|
 |연락처|99bonseong@gmail.com|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
+|Frontend|HTML, CSS, JavaScript|
+|Backend|Java, Spring, Python, R|
+|DB|Oracle|
+|자격증|ADsP, SQLD, 사회조사분석사 2급, 정보처리기사, 빅데이터분석기사|
+|경력| 유진아이티서비스 인턴 (2020. 02 ~ 2020. 05)
 
 |이름 |구본성|![gdKO](/gdko.jpg)|
 |연락처 | gdko(@)kopo.ac.kr|
