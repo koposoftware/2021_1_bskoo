@@ -1,4 +1,4 @@
-# 프로젝트 제목
+# 다이나믹하나 : 대시보드를 활용한 다아니막 카드명세서
 
 [프로젝트 홈페이지 - https://koposoftware.github.io/template/](https://koposoftware.github.io/template/)
 
