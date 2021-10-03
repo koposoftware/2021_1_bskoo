@@ -17,19 +17,18 @@
  
 
 # 3. 프로젝트 결과
-프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.
-
+<img src="cover.jpg"/>
+<img src="user_page.jpg"/>
+<img src="admin_page.jpg"/>
 ## 발표 ppt 
    <img src="ppt.jpg"/>[발표자료](/project.pptx)<br>
 
 ## 시연 동영상 
-
+업로드 예정
    <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
 
 # 4. 본인 소개
-<img src="me.jpg"/>
-
-
+<img src="me_small.jpg"/>
 
 |이름|구본성|
 |:-----|:--|
@@ -43,7 +42,7 @@
 
 
 # 5. 기타
-그외 프로젝트를 더욱 설명할수 있는 것들을 추가하세요
+- 서울시 빅데이터 캠퍼스에서 제공하는 `신한카드 소비데이터` 재구성
 
 # 홈페이지 설정
  본인 repository에서 "Setting"를 들어가서 GitHub Pages에서 설정 변경.
