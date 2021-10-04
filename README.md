@@ -8,26 +8,29 @@
 - 기존 하나카드의 앱은 거래내역 제공, 서비스 가입 등 제공하고 있는데, 이에 더하여 다이나믹하나를 통해 정보성 페이지 제공하여 고객에게 소비관련 인사이트 제공하고자 합니다.
 - 데이터 분석을 통한 고객 군집 세분화 및 특징 추출하여, 각 군집에 맞는 상품 추천, 제공합니다.
 
-# 2. 시스템 아키텍처
+# 2. 프로젝트 제안서
+[발표자료](proposal.pdf)<br>
+
+# 3. 시스템 아키텍처
 **<개발환경 및 시스템 아키텍처>**
- <img src="system.JPG"/>
+<img src="system.JPG"/>
 **<서비스 아키텍처>**
 <img src="service.JPG"/>
 
 
-# 3. 프로젝트 결과
+# 4. 프로젝트 결과
 **<사용자 페이지>**
 <img src="user_page.JPG"/>
 **<관리자 페이지>**
 <img src="admin_page.JPG"/>
 ## 발표 ppt 
 업로드예정
-   <img src="cover1.JPG"/>[발표자료](/project.pptx)<br>
+<img src="cover1.JPG"/>[발표자료](/project.pptx)<br>
 
 ## 시연 동영상 
 <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://youtu.be/qWUPHW-K_5w" frameborder="0"></iframe>
 
-# 4. 본인 소개
+# 5. 본인 소개
 <img src="me_small.jpg"/>
 
 |이름|구본성|
@@ -41,7 +44,7 @@
 |교육이수|신한카드 빅데이터 썸머스쿨 (2018. 07 ~ 08)<br>엔코아 데이터 모델링 스쿨 (2019. 01)<br>빅데이터 활용을 위한 파이썬 프로그래밍 (2019. 07 ~ 08)|
 
 
-# 5. 기타
+# 6. 기타
 - 서울시 빅데이터 캠퍼스에서 제공하는 `신한카드 소비데이터` 재구성 및 데이터 증폭
 - `주성분 분석` 및 `군집분석`
 - 대용량 데이터 `Index` 사용
