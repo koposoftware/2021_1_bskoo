@@ -25,8 +25,7 @@
    <img src="cover1.JPG"/>[발표자료](/project.pptx)<br>
 
 ## 시연 동영상 
-업로드 예정
-   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
+<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://youtu.be/qWUPHW-K_5w" frameborder="0"></iframe>
 
 # 4. 본인 소개
 <img src="me_small.jpg"/>
@@ -43,18 +42,8 @@
 
 
 # 5. 기타
-- 서울시 빅데이터 캠퍼스에서 제공하는 `신한카드 소비데이터` 재구성
+- 서울시 빅데이터 캠퍼스에서 제공하는 `신한카드 소비데이터` 재구성 및 데이터 증폭
+- `주성분 분석` 및 `군집분석`
+- 대용량 데이터 `Index` 사용
 
-# 홈페이지 설정
- 본인 repository에서 "Setting"를 들어가서 GitHub Pages에서 설정 변경.
-* Source
- Source에서 원하는 branch와 directory 설정한다. 
- 기본값은 master 에 root를 설정 
- Save 버튼 꼭 누른다.
- 
- * Theme Chooser
- theme을 변경하여 좀더 이쁜 홈페이지를 만든다.
-   
-   <img src="homepage.JPG"/><br>
-   
  
