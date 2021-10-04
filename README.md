@@ -8,13 +8,12 @@
 - 기존 하나카드의 앱은 거래내역 제공, 서비스 가입 등 제공하고 있는데, 이에 더하여 다이나믹하나를 통해 정보성 페이지 제공하여 고객에게 소비관련 인사이트 제공하고자 합니다.
 - 데이터 분석을 통한 고객 군집 세분화 및 특징 추출하여, 각 군집에 맞는 상품 추천, 제공합니다.
 
-# 2. 프로젝트 제안서
+# 2. 시스템 아키텍처
+**<개발환경 및 시스템 아키텍처>**
+ <img src="system.JPG"/>
+**<서비스 아키텍처>**
+<img src="service.JPG"/>
 
-프로젝트 제안서를 설명하세요. 발표자료와 동영상을 추가하세요. 시스템의 아키텍쳐 설명도 추가하세요.
-
-   <img src="cover1.JPG"/>[발표자료](/project.pptx)<br>
-   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
- 
 
 # 3. 프로젝트 결과
 **<사용자 페이지>**
