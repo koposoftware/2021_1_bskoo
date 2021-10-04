@@ -116,6 +116,9 @@ for (i in 1:dim(temp_mat)[2]){
 names(result_df)<-c("GROUP", "CATEGORY")
 
 
+kmeans_k4<-kmeans(result.df , centers=6)
+library(factoextra)
+fviz_cluster(kmeans_k4, result.tr, stand=F)+ theme_minimal()
 
 
 
@@ -125,20 +128,20 @@ result[,"group"]<-0
 #cutoff<-0.05
 
 #결과 추출
-for(i in (dim(result)[2]-1):1){
-  for(j in 1:dim(result)[1]){
-    if (temp_mat[max_index[i],i]>0){
-      if(result[j,i]>as.numeric(apply(result,2,mean))[i]+0.5*as.numeric(apply(result,2,sd))[i]){
-        result[j,k+1]<-i
-        }
-    }else if(temp_mat[max_index[i],i]<0){
-      if(result[j,i]<(as.numeric(apply(result,2,mean))[i]-0.5*as.numeric(apply(result,2,sd))[i])){
-        result[j,k+1]<-i
-      }
-    }
-    
-  }
-}
+# for(i in (dim(result)[2]-1):1){
+#   for(j in 1:dim(result)[1]){
+#     if (temp_mat[max_index[i],i]>0){
+#       if(result[j,i]>as.numeric(apply(result,2,mean))[i]+0.5*as.numeric(apply(result,2,sd))[i]){
+#         result[j,k+1]<-i
+#         }
+#     }else if(temp_mat[max_index[i],i]<0){
+#       if(result[j,i]<(as.numeric(apply(result,2,mean))[i]-0.5*as.numeric(apply(result,2,sd))[i])){
+#         result[j,k+1]<-i
+#       }
+#     }
+#     
+#   }
+# }
 
 
 member_grouping<-cbind(member_no, result['group'])
