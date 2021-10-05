@@ -46,8 +46,8 @@
 **<관리자 페이지>**
 <img src="admin_page.JPG"/>
 ## 발표 ppt 
-업로드예정
-<img src="cover1.JPG"/>[발표자료](/project.pptx)<br>
+
+[발표자료](final.pdf)<br>
 
 ## 시연 동영상 
 <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://youtu.be/qWUPHW-K_5w" frameborder="0"></iframe>
