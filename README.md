@@ -50,6 +50,7 @@
 [발표자료](final.pdf)<br>
 
 ## 시연 동영상 
+<a href="https://youtu.be/qWUPHW-K_5w" target="_blank">[링크]</a>
 <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://youtu.be/qWUPHW-K_5w" frameborder="0"></iframe>
 
 # 6. 본인 소개
