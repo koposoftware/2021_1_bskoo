@@ -60,7 +60,7 @@
 |연락처|99bonseong@gmail.com|
 |Frontend|HTML, CSS, JavaScript|
 |Backend|Java, Python, R|
-|Etc|Tableau|
+|Etc|SAS, VBA, Tableau|
 |자격증|ADsP, SQLD, 사회조사분석사 2급,<br>정보처리기사, 빅데이터분석기사, ADP(필기)|
 |경력|유진아이티서비스 인턴 (2020. 02 ~ 2020. 05)|
 |교육이수|신한카드 빅데이터 썸머스쿨 (2018. 07 ~ 08)<br>엔코아 데이터 모델링 스쿨 (2019. 01)<br>빅데이터 활용을 위한 파이썬 프로그래밍 (2019. 07 ~ 08)|
